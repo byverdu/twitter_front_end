@@ -1,0 +1,12 @@
+body {
+  color: purple;
+  font-size: 29px; }
+
+.item {
+  width: 25%;
+  border: 1px solid; }
+
+.item.w2 {
+  width: 50%;
+  border: 1px solid; }
+
