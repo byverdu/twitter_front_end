@@ -1,12 +1,175 @@
-body {
-  color: purplen;
-  font-size: 29px; }
+/* Styles for fake Twitter */
+
+*{
+	margin:  0;
+	padding: 0;
+}
+
+html{
+	font: 14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	background: url(http://www.fullhdpics.com/images/52072-game-hd-wallpapers-widescreen-desktop-backgrounds-2560x1600.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+.wrapper{
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid;
+
+}
+
+/* Styles header navigation */
+
+header{
+	background-color: white;
+	position: fixed;
+	top: -2px;
+	width: 100%;
+	z-index: 1;
+	height: 44px;
+}
+
+header ul li{
+	list-style: none;
+	margin-left: -5px;
+	display: inline-block;
+}
+
+.all_navs{
+	width: 90%;
+	margin: 0 auto;
+}
+
+/* nav icons */
+.active{ border-bottom: 4px solid  #0084B4;	}
+
+.nav_icon li a,
+.nav_icon li{
+
+color: #66757F;
+text-decoration: none;
+}
+
+.nav_icon li:hover,
+.nav_icon li a:hover{
+	color: #0084B4;	
+	transition: all .25s ease-in-out;
+}
+
+.nav_icon li:hover{ border-bottom: 4px solid;	}
+
+.nav_icon ul li{ padding: 10px }
+
+.nav_icon[class*=icon]{
+	font-size: 20px;
+	margin-left: 40px;
+}
+
+.text{
+	font-size:   15px;
+	font-weight: 600;
+}
+
+/* twitter image */
+
+.img_twitter{
+	color: #55ACEE;
+	float: right;
+	position: relative;
+	top: -32px;
+	right: 50%;
+}
+
+
+/* Styling settings nav */
+
+.nav_setting{
+	color: #A3ACB2;
+	float: right;
+	width: 440px;
+	position: relative;
+	top: -40px;
+	font-size: 21px;
+}
+
+.nav_setting input{
+	border: 0;
+	width: 160px;
+	position: relative;
+	top: -5px;
+	padding-left: 5px;
+}
+
+.nav_setting input[type=text]{
+	background-color: #A3ACB2;
+	color: white;
+	height: 28px;
+	border-radius: 15px;
+	opacity: 0.9;
+}
+
+span.icon-search{
+	color: white;
+	position: relative;
+	font-size: 15px;
+	left: -30px;
+	top: -2px;
+}
+
+.nav_setting input:focus{
+	
+	outline:0 !important;
+	transition: all .2s ease-in-out;
+	background: #66757F;
+
+}
+
+::-webkit-input-placeholder{
+	color: white;
+}
+
+:focus::-webkit-input-placeholder { color:#A3ACB2; }
+
+.nav_setting li{
+	margin-left: 35px
+}
+
+.nav_setting li:hover{
+	color: #0084B4;
+	cursor: pointer;
+}
+
+.nav_setting li.icon-quill{
+	border: 1px solid #0084B4;
+	padding: 4px;
+	background: #0084B4;
+	color: white;
+	border-radius: 5px;
+	width: 30px;
+	text-align: center;
+	margin-top: 3px;
+}
+
+/* End header */
+
+/* Content */
+
+.main_content{
+	width: 1230px;
+	margin: 0 auto;
+	border: 2px solid white;
+}
 
 .item {
   width: 25%;
-  border: 1px solid; }
+  border: 1px solid; 
+	background-color: white}
 
 .item.w2 {
   width: 50%;
+  border: 1px solid; }
+
+  .item.w4 {
+  width: 80%;
   border: 1px solid; }
 

@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Twitter</title>
-	<link rel="icon" href="https://abs.twimg.com/favicons/favicon.ico">
+  <meta charset="UTF-8">
+  <title>Twitter</title>
+  <link rel="icon" href="https://abs.twimg.com/favicons/favicon.ico">
 
-	<link rel="stylesheet" href="assets/css/main.css">
-	<link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/modal.css">
 </head>
 <body>
 
-<!-- <div id="container">
-  <div class="box">
-    <p>content</p>
+  <div id="ex1" style="display:none;">
+    <div class="modal_header">
+      <h3>Compose new Tweet</h3><a href="#" rel="modal:close">x</a>
+    </div>
+
+    <div class="modal_main">
+      <div class="tweet_area">
+        <textarea contenteditable="true"></textarea>
+      </div>
+    </div>
+    
   </div>
-  ...
-</div>
- 
-contains the content to be loaded when scrolled
-<nav id="page-nav">
-  <a href="pages/2.html"></a>
-</nav> 
+
+<div class="wrapper">
+
+
+  
+  <header>
 
 
 
-<div id="postswrapper">
-   <div class="item">content</div>
-   ...
-   <div id="loadmoreajaxloader" style="display:none;"><center><img src="ajax-loader.gif" /></center></div>
-</div>
+  <nav class="all_navs">
+    
+    <nav class="nav_icon">
+      
+      <ul>
+        <li class="icon-home active" > <a href="/">  <span class="text"> Home         </span> </a> </li>  
+        <li class="icon-bell" >        <a href="/">  <span class="text"> Notifications</span> </a> </li>  
+        <li class="icon-slack">        <a href="/">  <span class="text"> Discover     </span> </a> </li>  
+        <li class="icon-user" >        <a href="/">  <span class="text"> Me           </span> </a> </li>  
+      </ul>
+    </nav>
+
+    <h1 class="img_twitter icon-twitter"></h1>
+    
+    <nav class="nav_setting">
+      <ul>
+        <li> <input type="text" placeholder="  Search Twitter"> <span class="icon-search"></span></li>
+        <li class="icon-envelope"> </li>
+        <li class="icon-cog">      </li>
+        <a href="#ex1" rel="modal:open"><li class="icon-quill">    </li></a>
+      </ul>
+    </nav>
+
+  </nav>
 
 
--->
+  </header>
 
-<div id="postswrapper">
+  <section class="main_content">
+    
+    <div id="postswrapper">
 
 <div class="container">
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
 
 
@@ -46,9 +75,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
   <div class="item w2"><i class="icon-home"></i></div>
   
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-	
+  
 
   </div>
   ...
@@ -57,16 +86,16 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
 <div class="container">
   
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
 
 
   </div>
   
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-	
+  
 
   </div>
 
@@ -80,7 +109,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
 
 <div class="container">
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
 
 
@@ -89,9 +118,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
   <div class="item w2"><i class="icon-home"></i></div>
   
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-	
+  
 
   </div>
   ...
@@ -100,16 +129,16 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
 <div class="container">
   
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
 
 
   </div>
   
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-	
+  
 
   </div>
 
@@ -117,7 +146,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
 
   <div class="item w2"><i class="fa fa-home">
 
-	
+  
 
   </i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.</div>
 </div>
@@ -125,7 +154,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
 
 <div class="container">
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
 
 
@@ -134,9 +163,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
   <div class="item w2"><i class="icon-home"></i></div>
   
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-	
+  
 
   </div>
   ...
@@ -145,32 +174,32 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
 <div class="container">
   
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
 
 
   </div>
   
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-	
+  
 
   </div>
 
   
 
   <div class="item w2"><i class="fa fa-home">
-  	
+    
 
-	
+  
 
   </i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.</div>
 </div>
 
 <div class="container">
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
 
 
@@ -179,9 +208,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
   <div class="item w2"><i class="icon-home"></i></div>
   
   <div class="item">
-  	
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-	
+  
 
   </div>
   ...
@@ -189,24 +218,24 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
 
 <div class="container">
   
-  <div class="item">
-  	
+  <div class="item w3">
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
 
 
   </div>
   
-  <div class="item">
-  	
+  <div class="item w3">
+    
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-	
+  
 
   </div>
 
   
 
-  <div class="item w2"><i class="fa fa-home">
-  	
+  <div class="item w3"><i class="fa fa-home">
+    
 
 
   </i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.</div>
@@ -215,6 +244,12 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
 
    <div id="loadmoreajaxloader" style="display:none;"><center><img src="http://www.jquery4u.com/demos/infinite-scrolling-demo2/ajax-loader.gif" /></center></div>
 
+  </section>
+
+</div>
+
+
+
 
 <!-- <nav id="page-nav" style="color:red">
   <a href="/index_2.html"></a>
@@ -222,7 +257,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
  -->
 <script src="assets/js/jQuery.js"></script>
 <script src="assets/js/masonry.js"></script>
-<script src="assets/js/infinite_scroll.js"></script>
+<script src="assets/js/modal.js"></script>
 <script src="assets/js/main.js"></script>
 	
 </body>
