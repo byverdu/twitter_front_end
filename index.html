@@ -11,6 +11,8 @@
 </head>
 <body>
 
+  <!-- modal form -->
+
   <div id="ex1" style="display:none;">
     <div class="modal_header">
       <h3>Compose new Tweet</h3><a href="#" rel="modal:close">x</a>
@@ -24,10 +26,10 @@
 
     <div class="modal_footer">
       <ul>
-        <li></li>
-        <li></li>
-        <li class="total_count">140</li>
-        <li></li>
+        <li><button class="icon-camera hide_input"><span>Add more</span></button> <input type="file"></li>
+        <li><button class="icon-location"><span>Add Location</span></button></li>
+        <li class="total_count">140   </li>
+        <li><button class="icon-quill send_tweet" disabled=true><span>Tweet</span></button>  </li>
       </ul>
     </div>
     
@@ -35,227 +37,51 @@
 
 <div class="wrapper">
 
-
-  
+  <!-- navigation bar -->
   <header>
+    <nav class="all_navs">
+      <nav class="nav_icon">
+        
+        <ul>
+          <li class="icon-home active" > <a href="/">  <span class="text"> Home         </span> </a> </li>  
+          <li class="icon-bell" >        <a href="/">  <span class="text"> Notifications</span> </a> </li>  
+          <li class="icon-slack">        <a href="/">  <span class="text"> Discover     </span> </a> </li>  
+          <li class="icon-user" >        <a href="/">  <span class="text"> Me           </span> </a> </li>  
+        </ul>
+      </nav>
 
-
-
-  <nav class="all_navs">
-    
-    <nav class="nav_icon">
+      <h1 class="img_twitter icon-twitter"></h1>
       
-      <ul>
-        <li class="icon-home active" > <a href="/">  <span class="text"> Home         </span> </a> </li>  
-        <li class="icon-bell" >        <a href="/">  <span class="text"> Notifications</span> </a> </li>  
-        <li class="icon-slack">        <a href="/">  <span class="text"> Discover     </span> </a> </li>  
-        <li class="icon-user" >        <a href="/">  <span class="text"> Me           </span> </a> </li>  
-      </ul>
+      <nav class="nav_setting">
+        <ul>
+          <li> <input type="text" placeholder="  Search Twitter"> <span class="icon-search"></span></li>
+          <li class="icon-envelope"> </li>
+          <li class="icon-cog">      </li>
+          <a href="#ex1" rel="modal:open"><li class="icon-quill">    </li></a>
+        </ul>
+      </nav>
+
     </nav>
-
-    <h1 class="img_twitter icon-twitter"></h1>
-    
-    <nav class="nav_setting">
-      <ul>
-        <li> <input type="text" placeholder="  Search Twitter"> <span class="icon-search"></span></li>
-        <li class="icon-envelope"> </li>
-        <li class="icon-cog">      </li>
-        <a href="#ex1" rel="modal:open"><li class="icon-quill">    </li></a>
-      </ul>
-    </nav>
-
-  </nav>
-
-
   </header>
 
   <section class="main_content">
     
+      <div class="container">
+      <div class="item">...</div>
+      
+      <div class="item w2">...</div>
+      
+      <div class="item w3">...</div>
+    </div>
+
     <div id="postswrapper">
 
-<div class="container">
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
+  <!-- content -->
 
 
-  </div>
-  
-  <div class="item w2"><i class="icon-home"></i></div>
-  
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-  
 
-  </div>
-  ...
-</div>
-
-<div class="container">
-  
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-
-
-  </div>
-  
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-  
-
-  </div>
-
-  
-
-  <div class="item w2"><i class="icon-home"></i>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-
-  </div>
-</div>
-
-<div class="container">
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-
-
-  </div>
-  
-  <div class="item w2"><i class="icon-home"></i></div>
-  
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-  
-
-  </div>
-  ...
-</div>
-
-<div class="container">
-  
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-
-
-  </div>
-  
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-  
-
-  </div>
-
-  
-
-  <div class="item w2"><i class="fa fa-home">
-
-  
-
-  </i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.</div>
-</div>
-
-
-<div class="container">
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-
-
-  </div>
-  
-  <div class="item w2"><i class="icon-home"></i></div>
-  
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-  
-
-  </div>
-  ...
-</div>
-
-<div class="container">
-  
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-
-
-  </div>
-  
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-  
-
-  </div>
-
-  
-
-  <div class="item w2"><i class="fa fa-home">
-    
-
-  
-
-  </i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.</div>
-</div>
-
-<div class="container">
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-
-
-  </div>
-  
-  <div class="item w2"><i class="icon-home"></i></div>
-  
-  <div class="item">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-  
-
-  </div>
-  ...
-</div>
-
-<div class="container">
-  
-  <div class="item w3">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-
-
-  </div>
-  
-  <div class="item w3">
-    
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.
-  
-
-  </div>
-
-  
-
-  <div class="item w3"><i class="fa fa-home">
-    
-
-
-  </i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis dignissimos voluptatum! Natus animi debitis nisi incidunt, id voluptates, iure alias est et saepe, eaque aut, quas odit quis? Cupiditate.</div>
-</div>
-
-
-   <div id="loadmoreajaxloader" style="display:none;"><center><img src="http://www.jquery4u.com/demos/infinite-scrolling-demo2/ajax-loader.gif" /></center></div>
-
+    </div>
   </section>
-
-</div>
 
 
 
@@ -268,6 +94,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, veritatis digni
 <script src="assets/js/masonry.js"></script>
 <script src="assets/js/modal.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="http://maps.google.com/maps?file=api&v=3&key=AIzaSyCfpn8vfYEujFOkUn90msHKEKr-fzdjdwE" type="text/javascript">
+</script>
 	
 </body>
 </html>

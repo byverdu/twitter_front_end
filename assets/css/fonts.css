@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?i99w8a');
-	src:url('fonts/icomoon.eot?#iefixi99w8a') format('embedded-opentype'),
-		url('fonts/icomoon.woff?i99w8a') format('woff'),
-		url('fonts/icomoon.ttf?i99w8a') format('truetype'),
-		url('fonts/icomoon.svg?i99w8a#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?d1h03a');
+	src:url('fonts/icomoon.eot?#iefixd1h03a') format('embedded-opentype'),
+		url('fonts/icomoon.woff?d1h03a') format('woff'),
+		url('fonts/icomoon.ttf?d1h03a') format('truetype'),
+		url('fonts/icomoon.svg?d1h03a#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -61,6 +61,9 @@
 }
 .icon-chat:before {
 	content: "\e60a";
+}
+.icon-camera:before {
+	content: "\e60d";
 }
 .icon-envelope:before {
 	content: "\f0e0";

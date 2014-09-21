@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
  
-
+/* Masonry */
 var $container = $('.container');
 
 $container.masonry({
@@ -31,25 +31,105 @@ $container.masonry({
       }
   });
 
+  /* Modal window */
 
-  $('.modal_main textarea').on('keydown',function(){
+  //Textarea
+  $('.modal_main textarea').on('keyup',function(){
 
-    var count       = $(this).val().length+1,
+    var count, total_count, actual_count;
+
+    count        = $(this).val().length;
     
-    total_count     = $('.modal_footer .total_count'),
+    total_count  = $('.modal_footer .total_count');
         
-    actual_count    = 140-count;
+    actual_count = (140-count);
 
     total_count.text(actual_count);
 
     if(actual_count<0) total_count.css('color', 'red');
 
+    $('button.send_tweet').css('opacity', '1');
+    $('button.send_tweet').attr('disabled', false)
 
-    // console.log('count',count)
-    // console.log('total count',total_count)
-    // //console.log('total_count_val',total_count_val)
-    // console.log('actual_count',actual_count)
+    if(actual_count===140){
+
+      $('button.send_tweet').css('opacity', '0.4');
+      $('button.send_tweet').attr('disabled', true)
+    } 
+      
   })
+
+  // Hiding input
+  $('.hide_input').on('click',function(){ 
+    $('.modal_footer input').click() 
+  })
+
+
+  // Getting Geolocation
+
+  $('.icon-location').on('click', function(){
+
+    
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      
+      geocoder = new google.maps.Geocoder();
+      
+      var latlng = new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude);
+      
+      geocoder.geocode({'latLng': latlng}, function(results, status) {
+          
+
+        if (status == google.maps.GeocoderStatus.OK) {
+
+          var result, city, longo, i, address
+
+          result = results[0];
+          
+          city = "";
+
+          len=result.address_components.length;
+            
+          for(i=0; i<len; i++) {
+            
+            address = result.address_components[i];
+            
+            if(address.types.indexOf("locality") >= 0) city = address.long_name;
+            
+            //if(address.types.indexOf("administrative_area_level_1") >= 0) state = address.long_name;
+          }
+
+          $('.modal_footer button span').eq(1).text(city);
+          $('.modal_footer button').eq(1).css({
+            background: '#F5FAFC',
+            borderColor: 'rgba(0,132,180,.5)', 
+            borderRadius: '5px',
+          });
+
+          $('.modal_main textarea').keyup()
+
+          console.log("Hello to you out there in "+city);
+        }
+      }) 
+    })
+  })
+
+
+
+
+
+
+
+
 
 });
 
+  // navigator.geolocation.getCurrentPosition(show_map)
+  
+  // function show_map(position) {
+  // var latitude = position.coords.latitude;
+  // var longitude = position.coords.longitude;
+  
+  // $('.modal_main textarea').text(longitude +' ' +latitude)
+
+  // console.log(latitude,longitude)
+  // }

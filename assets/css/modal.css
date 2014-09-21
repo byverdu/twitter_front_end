@@ -15,53 +15,7 @@
   box-shadow: 0 0 10px #000;
 }
 
-.modal_header{
-   color:  #A3ACB2;
-   border-bottom: solid 1px rgba(0, 132, 180, .25);
-   position: relative;
-   top: -15px;
-   background-color: white;
-   padding: 10px;
-   border-radius: 8px 8px 0 0;
-}
 
-.modal_header a{
-  float: right;
-  color: #A3ACB2;
-  text-decoration: none;
-  position: relative;
-  top: -24px;
-  font-size: 19px;
-}
-
-.modal_header h3{
-  text-align: center;
-  font-weight: 300;
- 
-}
-
-.modal_main{
- background: #E5F2F7;
-}
-
-.modal_main .tweet_area{
-  width: 470px;
-  height: 120px;
-  background: white;
-  margin: 0 auto;
-  border: 1px solid #99CDE1;
-  border-radius: 6px;
-}
-
-.modal_main textarea{
-  border: none;
-  height: 100px;
-  width: 450px;
-  margin: 10px;
-  overflow-y: hidden;
-}
-
-.modal_main textarea:focus{outline:0 !important;}
 
 .modal a.close-modal {
   position: absolute;

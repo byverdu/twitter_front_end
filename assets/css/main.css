@@ -5,6 +5,8 @@
 	padding: 0;
 }
 
+*:focus{outline:0 !important;}
+
 html{
 	font: 14px "Helvetica Neue",Helvetica,Arial,sans-serif;
 	background: url(http://www.fullhdpics.com/images/52072-game-hd-wallpapers-widescreen-desktop-backgrounds-2560x1600.jpg) no-repeat center center fixed;
@@ -36,7 +38,7 @@ header ul li{
 }
 
 .all_navs{
-	width: 90%;
+	width: 82%;
 	margin: 0 auto;
 }
 
@@ -155,9 +157,10 @@ span.icon-search{
 /* Content */
 
 .main_content{
-	width: 1230px;
+	width: 78%;
 	margin: 0 auto;
 	border: 2px solid white;
+	margin-top: 50px;
 }
 
 .item {
@@ -173,3 +176,128 @@ span.icon-search{
   width: 80%;
   border: 1px solid; }
 
+/* Own Styles modal  */
+
+/******************************************************************************************************/
+
+.modal_header{
+   color:  #A3ACB2;
+   border-bottom: solid 1px rgba(0, 132, 180, .25);
+   position: relative;
+   top: -15px;
+   background-color: white;
+   padding: 10px;
+   border-radius: 8px 8px 0 0;
+}
+
+.modal_header a{
+  float: right;
+  color: #A3ACB2;
+  text-decoration: none;
+  position: relative;
+  top: -24px;
+  font-size: 19px;
+}
+
+.modal_header h3{
+  text-align: center;
+  font-weight: 300;
+ 
+}
+
+.modal_main{
+ background: #E5F2F7;
+}
+
+.modal_main .tweet_area{
+  width: 470px;
+  height: 120px;
+  background: white;
+  margin: 0 auto;
+  border: 1px solid #99CDE1;
+  border-radius: 6px;
+}
+
+.modal_main textarea{
+  border: none;
+  height: 100px;
+  width: 450px;
+  margin: 10px;
+  overflow-y: hidden;
+}
+
+.modal_main textarea:focus{outline:0 !important;}
+
+/******************************************************************************************************/
+
+.modal_footer ul{
+  position: relative;
+  top: 10px;
+  width: 470px;
+  left: 5%;
+  font-size: 12px;
+}
+
+.modal_footer li{ 
+  display: inline-block; 
+  color: #2E9AC2;
+  margin-left: 20px;
+}
+
+
+.modal_footer input{ display: none; }
+
+.modal_footer button{
+  font-size: 30px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #2E9AC2;
+  position: relative;
+  top: 7px;
+  padding: 2px 7px;
+  cursor: pointer;
+}
+
+.modal_footer span{ 
+  font-size: 12px;
+  position: relative;
+  top: -5px;
+}
+
+.modal_footer button:hover{
+  background-image: linear-gradient(rgba(255,255,255,0), rgba(0,132,180,.1));
+  border-color: rgba(0,132,180,.5);
+  color: #0084B4;
+  /*border: 1px solid transparent;*/
+  border: 1px solid rgba(0,132,180,.5);
+  border-radius: 5px
+}
+
+
+.modal_footer button.send_tweet:hover{
+  color: white;
+  background-color: #0084B4;
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.15));
+}
+
+.modal_footer .send_tweet{
+  background-color: #0084B4;
+  color: white;
+  border-radius: 5px;
+  padding: 9px;
+}
+
+.modal_footer button.send_tweet:disabled{opacity: 0.4;}
+
+.send_tweet span{ 
+  font-size: 17px;
+  font-weight: 600;
+}
+
+
+.modal_footer .icon-quill{
+  font-size: 15px;
+}
+
+
+/******************************************************************************************************/
