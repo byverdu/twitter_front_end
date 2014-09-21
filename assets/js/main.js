@@ -1,14 +1,5 @@
 jQuery(document).ready(function($) {
  
-/* Masonry */
-var $container = $('.container');
-
-$container.masonry({
-  // options
-  columnWidth: 200,
-  itemSelector: '.item'
-});
-
   $(window).scroll(function()
   {
       if($(window).scrollTop() == $(document).height() - $(window).height())
