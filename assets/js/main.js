@@ -105,7 +105,14 @@ jQuery(document).ready(function($) {
   })
 
 
-
+  $('.tweet').hover(function() {
+    
+    $(this).css('background-color','#F5F8FA');
+    $(this).find('.social_area li').css('color', '#8899A6');
+  }, function() {
+     $(this).css('background-color','white');
+    $(this).find('.social_area li').css('color', '#E1E8ED');
+  });
 
 
 
