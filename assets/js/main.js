@@ -60,6 +60,7 @@ jQuery(document).ready(function($) {
 
   $('.icon-location').on('click', function(){
 
+    console.log('ok')
     
     navigator.geolocation.getCurrentPosition(function(pos) {
       
@@ -71,6 +72,8 @@ jQuery(document).ready(function($) {
           
 
         if (status == google.maps.GeocoderStatus.OK) {
+
+          console.log(google.maps.GeocoderStatus)
 
           var result, city, longo, i, address
 
@@ -115,6 +118,57 @@ jQuery(document).ready(function($) {
   });
 
 
+
+  $('.send_tweet').on('click',function(){ 
+  
+    var tweet,loc,content,img,social_area;
+
+    img = '<img src="https://pbs.twimg.com/profile_images/450573642121109504/ZoIKuh46_bigger.jpeg">';
+    social_area = '<div class="social_area"><ul><li class="icon-reply">Reply</li><li class="icon-retweet">Retweet</li><li class="icon-star">Favorite</li><li>... More</li></ul></div>';
+
+    tweet = $('#ex1 textarea').val();
+
+    content = '<div class="tweet_content"><h3>Byverdu<span> @Byverdu</span></h3><p>'+tweet+'</p></div>';
+
+    loc = $('.icon-location span').text();
+
+    $('.close-modal').trigger('click');
+
+    $('.tweet').first().before('<div class="tweet">'+img+content+social_area+'</div>');
+
+    console.log('tweet ->',tweet,'loc->,',loc)
+    tweet = $('#ex1 textarea').val(' ');
+
+    $('.modal_footer .total_count').text(140);
+
+  })
+
+
+
+
+  // <div class="tweet">
+        
+  //       <div class="retweet">
+  //         <span class="icon-retweet"></span><span>Byverdu retweeted</span>
+  //       </div>
+        
+  //       <img src="https://pbs.twimg.com/profile_images/430574860146720768/Yhs4a60S_bigger.jpeg">
+
+  //       <div class="tweet_content">
+  //         <h3>Nicole Sullivan  <span>@stubbornella</span> </h3>
+  //         <p>Who says I don't need a felt kindling tote? <a href="https://twitter.com/hashtag/hipsterangst?src=hash">#hipster</a></p>
+  //       </div>
+        
+  //       <div class="social_area">
+  //         <ul>
+  //           <li class="icon-reply">Reply</li>
+  //           <li class="icon-retweet">Retweet</li>
+  //           <li class="icon-star">Favorite</li>
+  //           <li>... More</li>
+  //         </ul>
+  //       </div>
+
+  //     </div>
 
 
 
