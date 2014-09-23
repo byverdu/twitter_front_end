@@ -134,7 +134,11 @@ jQuery(document).ready(function($) {
 
     $('.close-modal').trigger('click');
 
-    $('.tweet').first().before('<div class="tweet">'+img+content+social_area+'</div>');
+    if(loc!=='Add Location'){
+
+        $('.tweet').first().before('<div class="tweet">'+img+content+social_area+'<p>Send it from'+loc+'</p></div>');
+
+    } else $('.tweet').first().before('<div class="tweet">'+img+content+social_area+'</div>');
 
     console.log('tweet ->',tweet,'loc->,',loc)
     tweet = $('#ex1 textarea').val(' ');
