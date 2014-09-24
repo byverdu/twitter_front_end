@@ -8,17 +8,17 @@ In addition is possible to toggle a modal window where a tweet con be written an
 
 The project can be tested by: 
 
-1- Cloning this repo or download it.
+1. Cloning this repo or download it.
 
-2- `cd /to/path` 
+2. `cd /to/path` 
 
-3- Run `python -m SimpleHTTPServer` to create a web server.
+3. Run `python -m SimpleHTTPServer` to create a web server.
 
 4. Visit `0.0.0.0:8000`
 
 #### Twitter.com
 
-![twitter.com](://github.com/byverdu/twitter_front_end/blob/master/assets/real.jpg)
+![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/assets/real.jpg)
 
 #### ByTweet.es
 
