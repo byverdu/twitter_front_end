@@ -4,7 +4,7 @@ Reimplementation of Twitter.com feed page as close as possible to the real one.
 
 This project is build using HTML, CSS3, Jquery, Google Maps API and IcoMoon.
 
-In addition is possible to toggle a modal window where a tweet con be written and published.
+In addition is possible to toggle a modal window where a tweet can be written and published.
 
 The project can be tested by: 
 
