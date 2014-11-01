@@ -1,0 +1,10 @@
+{
+	"name": "twitterClone",
+	"author": "byverdu@gmail.com",
+	"script":{
+		"start": "node server.js"
+	},
+	"dependencies":{
+		"express": "*"
+	}
+}

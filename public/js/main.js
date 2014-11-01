@@ -136,7 +136,7 @@ jQuery(document).ready(function($) {
 
     if(loc!=='Add Location'){
 
-        $('.tweet').first().before('<div class="tweet">'+img+content+social_area+'<p>Send it from'+loc+'</p></div>');
+        $('.tweet').first().before('<div class="tweet">'+img+content+social_area+'<p class="loc_class">Send it from'+loc+'</p></div>');
 
     } else $('.tweet').first().before('<div class="tweet">'+img+content+social_area+'</div>');
 

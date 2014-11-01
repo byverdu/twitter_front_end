@@ -461,6 +461,16 @@ aside .trends{
 	margin-top: 20px;
 }
 
+
+.loc_class{
+	font-weight: 300;
+font-size: 15px;
+position: relative;
+top: -25px;
+left: 18px;
+color: #8899A6;
+}
+
 .social_area ul{
 	display: inline-flex;
 	position: relative;
