@@ -34,7 +34,7 @@ The project can be viewed by:
 
 ![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/public/real.jpg)
 
-#### ByTweet.es
+#### Twitter,byverdu.es
 
 ![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/public/mine.jpg)
 
