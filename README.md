@@ -22,17 +22,19 @@ The project can be tested by:
 
 2. `cd twitter_front_end` 
 
-3. `python -m SimpleHTTPServer # creates a web server`
+3. `npm install`
 
-4. `Visit 0.0.0.0:8000`
+4. `npm start`
+
+4. `Visit 127.0.0.1:9393`
 
 #### Twitter.com
 
-![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/assets/real.jpg)
+![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/public/real.jpg)
 
 #### ByTweet.es
 
-![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/assets/mine.jpg)
+![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/public/mine.jpg)
 
 
 
