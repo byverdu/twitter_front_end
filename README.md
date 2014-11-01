@@ -16,9 +16,11 @@ Understand the HTML structure of a web page by using front end technologies.
 
 In addition is possible to toggle a modal window where a tweet can be written and published.
 
-The project can be tested by: 
+The project can be viewed by:
 
-1. `clone https://github.com/byverdu/twitter_front_end.git`
+1. Visiting [Twitter.byverdu.es](http://twitter.byverdu.es:9393/)
+
+1. or `clone https://github.com/byverdu/twitter_front_end.git` and then
 
 2. `cd twitter_front_end` 
 
