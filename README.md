@@ -2,6 +2,7 @@
 
 Reimplementation of Twitter.com feed page as close as possible to the real one.
 
+
 ### Objectives
 
 Understand the HTML structure of a web page by using front end technologies.
