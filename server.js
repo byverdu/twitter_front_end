@@ -1,13 +1,17 @@
-var express = require('express'),
-    path    = require('path');
+'use strict';
+let express = require( 'express' );
+let path = require( 'path' );
+let routes = require( './routes');
 
-var app     = express();
+let app  = express();
 
-app.use(express.static(path.join(__dirname,'public')));
+app.set( 'views', path.join( __dirname, 'views' ) );
+app.set( 'view engine', 'jade');
+app.use( express.static( path.join( __dirname, 'public' ) ) );
+app.use( '/', routes );
 
 app.listen(9393, function(){
-
-    console.log('Server details', this.address())
+    console.log('Server details', this.address());
 });
 
 module.exports = app;

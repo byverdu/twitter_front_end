@@ -1,10 +1,16 @@
 {
-	"name": "twitterClone",
-	"author": "byverdu@gmail.com",
-	"script":{
-		"start": "node server.js"
-	},
-	"dependencies":{
-		"express": "*"
-	}
+  "name": "twitterClone",
+  "author": "byverdu@gmail.com",
+  "scripts": {
+    "start": "babel-node server.js",
+    "nodemon": "nodemon --exec babel-node server.js"
+  },
+  "dependencies": {
+    "babel": "^6.3.26",
+    "babel-cli": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "express": "*",
+    "jade": "^1.11.0",
+    "twit": "^2.1.1"
+  }
 }
