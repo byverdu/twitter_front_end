@@ -58,7 +58,7 @@ text-decoration: none;
 
 .nav_icon li:hover,
 .nav_icon li a:hover{
-	color: #0084B4;	
+	color: #0084B4;
 	transition: all .25s ease-in-out;
 }
 
@@ -123,7 +123,7 @@ span.icon-search{
 }
 
 .nav_setting input:focus{
-	
+
 	outline:0 !important;
 	transition: all .2s ease-in-out;
 	background: #66757F;
@@ -185,7 +185,7 @@ span.icon-search{
 .modal_header h3{
   text-align: center;
   font-weight: 300;
- 
+
 }
 
 .modal_main{
@@ -221,8 +221,8 @@ span.icon-search{
   font-size: 12px;
 }
 
-.modal_footer li{ 
-  display: inline-block; 
+.modal_footer li{
+  display: inline-block;
   color: #2E9AC2;
   margin-left: 20px;
 }
@@ -241,7 +241,7 @@ span.icon-search{
   cursor: pointer;
 }
 
-.modal_footer span{ 
+.modal_footer span{
   font-size: 12px;
   position: relative;
   top: -5px;
@@ -272,7 +272,7 @@ span.icon-search{
 
 .modal_footer button.send_tweet:disabled{opacity: 0.4;}
 
-.send_tweet span{ 
+.send_tweet span{
   font-size: 17px;
   font-weight: 600;
 }
@@ -342,7 +342,7 @@ aside .trends{
 }
 
 .user_profile ul span{
-	
+
 	position: relative;
 	top: 24px;
 	font-size: 20px;
@@ -612,11 +612,7 @@ color: #8899a6;
 }
 
 .tweet_content img{
-	width: 
+	width:
 }
 
 }
-
-
-
-

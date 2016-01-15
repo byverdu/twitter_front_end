@@ -1,21 +1,29 @@
 'use strict';
 const express = require( 'express' );
 const router = express.Router();
+let config = require('../config/config');
 
 let Twit = require('twit');
-let config = require('../config/config');
 let TwitterAPI = new Twit( config.twitterAPI );
-let twitObject = {};
+let twitContainer = [];
 
 router.get( '/', ( request, response ) => {
-  TwitterAPI.get('statuses/home_timeline', { q: 'byverdu', count: 10 }, (err, data) => {
-    // console.log(data);
-    twitObject.user = data[0].created_at;
-    console.log(twitObject, 'inside');
-    console.log(twitObject, 'twitObject');
+
+  TwitterAPI.get( config.urlAPI, config.queryAPI, (err, tweets) => {
+
+    tweets.forEach( (tweet) => {
+      console.log(tweet);
+      let twitObject = {};
+      twitObject.text = tweet.text;
+      twitObject.name = tweet.user.name;
+      twitObject.screen_name = tweet.user.screen_name;
+      twitObject.profile_image_url = tweet.user.profile_image_url;
 
 
-  response.render( 'index', { data: twitObject.user } );
+      twitContainer.push(twitObject);
+    });
+
+  response.render( 'index', { data: twitContainer } );
 
   });
 });

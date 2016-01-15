@@ -2,9 +2,16 @@
 html(lang="en")
 head
   meta(charset="UTF-8")
+  link(rel="stylesheet", href="css/fonts.css")
+  link(rel="stylesheet", href="css/main.css")
   title Twitter
 body
   
-  h1 Twitter
-  p= data
+  .wrapper
+    
+    include header.jade
+    section.main_content
+  
+  each val in data
+    p= val.screen_name
   
