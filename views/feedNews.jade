@@ -1,0 +1,17 @@
+each tweet in tweetContainer
+  .tweet
+    include userProfile.jade
+    
+    img( src=tweet.profile_image_url, alt=`image for ${ tweet.screen_name }` )
+    
+    .tweet_content
+      h3 #{tweet.name} #[span= `@${tweet.screen_name}`]
+      p #{tweet.text}
+    
+    .social_area
+      ul
+        li.icon-reply Reply
+        li.icon-retweet Retweet
+        li.icon-star Favorite
+        li ...More
+  

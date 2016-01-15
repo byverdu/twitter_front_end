@@ -7,5 +7,5 @@ module.exports = {
   },
 
   urlAPI: 'statuses/home_timeline',
-  queryAPI: { q: 'byverdu', count: 15 }
+  queryAPI: { q: 'byverdu', count: 25 }
 };

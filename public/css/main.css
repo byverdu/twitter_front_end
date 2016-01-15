@@ -400,7 +400,7 @@ aside .trends{
 	float: right;
 	border: 1px solid white;
 	position: relative;
-	top: -574px;
+	/*top: -574px;*/
 	left: -25%;
 	background: white;
 	border-radius: 5px;
