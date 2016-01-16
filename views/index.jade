@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    title Twitter
-    link(rel="icon", href="images/favicon.ico")
-    link(rel="stylesheet", href="css/fonts.css")
-    link(rel="stylesheet", href="css/main.css")
-  body
-    .wrapper  
-      include header.jade
-      section.main_content      
-        .feed_news
-          h2 Tweets  
-          include feedNews.jade
+extends ./partials/layout.jade
+
+block content
+  .wrapper  
+    include ./partials/nav.jade
+    section.main_content      
+      .feed_news
+        h2 Tweets  
+        include ./partials/feedNews.jade
