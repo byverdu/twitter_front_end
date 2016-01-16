@@ -1,21 +1,24 @@
-extends ./partials/layout.jade
+extends ./partials/layout
 
 block content
   .wrapper  
-    include ./partials/nav.jade
+    include ./partials/nav
     section.main_content 
       
-      aside( rel="profile" )     
-        include ./partials/userProfile.jade
+      aside     
+        .user_profile
+          include ./partials/userProfile
         .trends
-          h2 Trends #{userObject.name}
-          ul
-            each val in ['#ruby','#js','#cloud','#arsenal','#nerd','#keepgoing','#html5','#css3','#node','#loop']
-              li= val
+          include ./partials/trends
             
-        
-      .feed_news
-        h2 Tweets  
-        include ./partials/feedNews.jade
+      .feed_news  
+        include ./partials/feedNews
+      
+      aside
+        .who_follow
+          include ./partials/toFollow
+        .footer
+          include ./partials/footer
+      
         
         

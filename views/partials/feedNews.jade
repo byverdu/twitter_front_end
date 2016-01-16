@@ -1,6 +1,7 @@
+h2 Tweets
 each tweet in tweetContainer
   .tweet
-    include tweetUserProfile.jade
+    include tweetUserProfile
     
     img( src=tweet.profile_image_url, alt=`image for ${ tweet.screen_name }` )
     

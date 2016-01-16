@@ -1,0 +1,7 @@
+h2 Who to follow
+ul
+each val in [ tweetContainer[0], tweetContainer[8], tweetContainer[12] ]
+  li
+    img(src="#{ val.profile_image_url}", alt="image profile")
+    h5 #{ val.name } #[span @#{ val.screen_name } ]
+  li: button.icon-user-add Follow
