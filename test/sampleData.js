@@ -162,5 +162,30 @@ module.exports = () => {
   lang: 'en'
 };
 
-  return [ tweet0, tweet1 ];
+let convert4digitNumber = ( number ) => {
+  let stringNumber = String( number );
+  let splitString = stringNumber.split('');
+  let resultString = '';
+  let numberCount = splitString.length;
+
+  switch ( numberCount ) {
+    case 4:
+      resultString = `${ splitString[0] }.${ splitString[1] }K`;
+      break ;
+    case 5:
+      resultString = `${ splitString[0]+splitString[1] }.${ splitString[2] }K`;
+      break;
+    case 6:
+      resultString = `${ splitString[0]+splitString[1]+splitString[2] }K`;
+      break;
+    case 7:
+      resultString = `${ splitString[0] }.${ splitString[1]+splitString[2] }M`;
+      break;
+    default:
+      resultString = stringNumber;
+  }
+  return resultString;
+};
+
+  return [ tweet0, tweet1, convert4digitNumber ];
 };
