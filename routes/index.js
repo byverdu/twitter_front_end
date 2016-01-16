@@ -15,10 +15,11 @@ router.get( '/', ( request, response ) => {
     tweets.forEach( (tweet) => {
       tweetContainer.push( helper.buildTweetObject( tweet ) );
     });
-
+    console.log(tweets[0]);
   response.render( 'index', { tweetContainer: tweetContainer } );
 
   });
 });
 
 module.exports = router;
+ // .entities.media[0].media_url

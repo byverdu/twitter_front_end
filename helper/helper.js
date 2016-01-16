@@ -6,8 +6,17 @@ Helper.prototype.buildTweetObject = ( tweet ) => {
 
   let backgroundImage = tweet.user.profile_banner_url || 'images/defaultBackground.jpg';
   let convert4digitNumber = new HelperNumber().convert4digitNumber;
+  let tweetImage;
+
+  if ( tweet.entities.hasOwnProperty( 'media' ) ) {
+    tweetImage = tweet.entities.media[0].media_url;
+  } else {
+    tweetImage = '';
+  }
+
   return {
     text: tweet.text,
+    tweetImage: tweetImage,
     name: tweet.user.name,
     description: tweet.user.description,
     screen_name: tweet.user.screen_name,
