@@ -28,6 +28,22 @@ Helper.prototype.buildTweetObject = ( tweet ) => {
   };
 };
 
+Helper.prototype.buildUserObject = ( user ) => {
+
+  let backgroundImage = user.profile_banner_url || 'images/defaultBackground.jpg';
+  let convert4digitNumber = new HelperNumber().convert4digitNumber;
+
+  return {
+    name: user.name,
+    screen_name: user.screen_name,
+    profile_image_url: user.profile_image_url,
+    profile_banner_url: backgroundImage,
+    followers_count: convert4digitNumber( user.followers_count ),
+    friends_count: convert4digitNumber( user.friends_count ),
+    statuses_count: convert4digitNumber( user.statuses_count )
+  };
+};
+
 function HelperNumber() {}
 
 HelperNumber.prototype.convert4digitNumber = ( number ) => {

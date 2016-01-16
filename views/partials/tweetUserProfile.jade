@@ -1,0 +1,7 @@
+.user_description
+  img( src=tweet.profile_banner_url, alt=`background image for ${ tweet.screen_name }` )
+  p #{ tweet.description }
+  ul
+    li #{tweet.statuses_count} Tweets
+    li #{tweet.friends_count} Following
+    li #{tweet.followers_count} Followers

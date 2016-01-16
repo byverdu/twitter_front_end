@@ -3,7 +3,19 @@ extends ./partials/layout.jade
 block content
   .wrapper  
     include ./partials/nav.jade
-    section.main_content      
+    section.main_content 
+      
+      aside( rel="profile" )     
+        include ./partials/userProfile.jade
+        .trends
+          h2 Trends #{userObject.name}
+          ul
+            each val in ['#ruby','#js','#cloud','#arsenal','#nerd','#keepgoing','#html5','#css3','#node','#loop']
+              li= val
+            
+        
       .feed_news
         h2 Tweets  
         include ./partials/feedNews.jade
+        
+        

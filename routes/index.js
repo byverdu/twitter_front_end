@@ -7,6 +7,7 @@ let helper = new Helper();
 let Twit = require('twit');
 let TwitterAPI = new Twit( config.twitterAPI );
 let tweetContainer = [];
+let userObject;
 
 router.get( '/', ( request, response ) => {
 
@@ -15,11 +16,16 @@ router.get( '/', ( request, response ) => {
     tweets.forEach( (tweet) => {
       tweetContainer.push( helper.buildTweetObject( tweet ) );
     });
-    console.log(tweets[0]);
-  response.render( 'index', { tweetContainer: tweetContainer } );
+
+    TwitterAPI.get( 'users/show', { screen_name: 'byverdu' }, ( err, user ) => {
+      console.log(user);
+
+      userObject = helper.buildUserObject( user );
+
+      response.render( 'index', { tweetContainer: tweetContainer, userObject: userObject } );
+    } );
 
   });
 });
 
 module.exports = router;
- // .entities.media[0].media_url
