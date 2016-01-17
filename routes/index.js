@@ -9,17 +9,21 @@ require( '../config/twitter' )();
 router.get( '/', ( request, response ) => {
 
   let initialTweetStore = storage.getItem( 'initialTweetStore' );
-  let secondTweetStore = storage.getItem( 'secondTweetStore' );
   let userStore = storage.getItem( 'userStore' );
   let toFollowStore = storage.getItem( 'toFollowStore' );
 
   let objectToRender = {
     initialTweetStore: initialTweetStore,
-    secondTweetStore: secondTweetStore,
     userStore: userStore,
     toFollow:  toFollowStore
   };
   response.render( 'index', objectToRender );
+});
+
+router.get( '/secondFeed', ( request, response ) => {
+  let secondTweetStore = storage.getItem( 'secondTweetStore' );
+
+  response.render( 'secondFeed', { secondTweetStore: secondTweetStore } );
 });
 
 module.exports = router;
