@@ -187,5 +187,16 @@ let convert4digitNumber = ( number ) => {
   return resultString;
 };
 
-  return [ tweet0, tweet1, convert4digitNumber ];
+let getRandomValues = ( array ) => {
+  let arrayLength = array.length;
+  let resultValue = Math.floor( Math.random() * ( arrayLength - 0) + 0 );
+  return resultValue;
+};
+
+  return {
+    tweet0: tweet0,
+    tweet1: tweet1,
+    convert4digitNumber: convert4digitNumber,
+    getRandomValues:getRandomValues
+  };
 };

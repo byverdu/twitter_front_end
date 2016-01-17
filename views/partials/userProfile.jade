@@ -1,9 +1,9 @@
-img(src="#{ userObject.profile_banner_url}", alt="profile banner")
-img(src="#{ userObject.profile_image_url}", alt="profile iamge")
-h3 #{ userObject.name }
-h5 @#{ userObject.screen_name }
+img(src="#{ userStore.profile_banner_url}", alt="profile banner")
+img(src="#{ userStore.profile_image_url}", alt="profile iamge")
+h3 #{ userStore.name }
+h5 @#{ userStore.screen_name }
 
 ul
-  li TWEETS #[span #{ userObject.statuses_count }]
-  li FOLLOWING #[span #{ userObject.followers_count }]
-  li FOLLOWERS #[span #{ userObject.friends_count }]
+  li TWEETS #[span #{ userStore.statuses_count }]
+  li FOLLOWING #[span #{ userStore.followers_count }]
+  li FOLLOWERS #[span #{ userStore.friends_count }]

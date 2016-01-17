@@ -6,6 +6,8 @@ module.exports = {
     access_token_secret:  process.env.ACCESS_TOKEN_SECRET,
   },
 
-  urlAPI: 'statuses/home_timeline',
-  queryAPI: { q: 'byverdu', count: 25 }
+  tweetUrlAPI: 'statuses/home_timeline',
+  tweetQueryAPI: { q: 'byverdu', count: 25 },
+  userUrlAPI: 'users/show',
+  userQueryAPI: { screen_name: 'byverdu' }
 };

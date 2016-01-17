@@ -14,6 +14,7 @@
     "express": "*",
     "jade": "^1.11.0",
     "mocha": "^2.3.4",
+    "node-persist": "0.0.8",
     "serve-favicon": "^2.3.0",
     "twit": "^2.1.1"
   }

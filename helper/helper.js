@@ -5,7 +5,6 @@ function Helper() {}
 Helper.prototype.buildTweetObject = ( tweet ) => {
 
   let backgroundImage = tweet.user.profile_banner_url || 'images/defaultBackground.jpg';
-  let convert4digitNumber = new HelperNumber().convert4digitNumber;
   let tweetImage;
 
   if ( tweet.entities.hasOwnProperty( 'media' ) ) {
@@ -31,7 +30,6 @@ Helper.prototype.buildTweetObject = ( tweet ) => {
 Helper.prototype.buildUserObject = ( user ) => {
 
   let backgroundImage = user.profile_banner_url || 'images/defaultBackground.jpg';
-  let convert4digitNumber = new HelperNumber().convert4digitNumber;
 
   return {
     name: user.name,
@@ -44,9 +42,36 @@ Helper.prototype.buildUserObject = ( user ) => {
   };
 };
 
-function HelperNumber() {}
+Helper.prototype.arrayRandomValues = ( array ) => {
+  let arrayCount = ( array.length - 1 );
+  let resultCount = 3;
+  let resultArray = [];
 
-HelperNumber.prototype.convert4digitNumber = ( number ) => {
+  while ( resultArray.length < resultCount ) {
+    let randValue = getRandomValues( arrayCount );
+
+    if ( resultArray.indexOf( randValue ) === -1 ) {
+      resultArray.push( randValue );
+    }
+  }
+  return resultArray;
+};
+
+Helper.prototype.buildToFollow = ( store, randomArr, finalStore) => {
+  store.forEach( ( el, ind, arr ) => {
+    
+    if ( randomArr.indexOf( ind ) !== -1 ) {
+      finalStore.push( arr[ind] );
+    }
+  });
+};
+
+function getRandomValues( totalCount ) {
+  let resultValue = Math.floor( Math.random() * ( totalCount - 0) + 0 );
+  return resultValue;
+}
+
+function convert4digitNumber( number ) {
   let stringNumber = String( number );
   let splitString = stringNumber.split('');
   let resultString = '';
@@ -69,6 +94,6 @@ HelperNumber.prototype.convert4digitNumber = ( number ) => {
       resultString = stringNumber;
   }
   return resultString;
-};
+}
 
 module.exports =  Helper;
