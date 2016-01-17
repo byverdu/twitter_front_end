@@ -65,22 +65,14 @@ module.exports = () => {
     is_quote_status: false,
     retweet_count: 5,
     favorite_count: 7,
-    entities: {
-      hashtags: [],
-      symbols: [],
-      user_mentions: [],
-      urls: [
-        [Object]
-      ],
-      media: [
-        [Object]
-      ]
-    },
-    extended_entities: {
-      media: [
-        [Object]
-      ]
-    },
+    entities: { hashtags: [],
+  symbols: [],
+  user_mentions: [],
+  urls:
+   [ { url: 'https://t.co/RH6ndZHLJy',
+       expanded_url: 'http://overpassfont.org/',
+       display_url: 'overpassfont.org',
+       indices: [Object] } ] },
     favorited: false,
     retweeted: false,
     possibly_sensitive: false,
@@ -88,11 +80,11 @@ module.exports = () => {
     lang: 'en'
   };
 
-  let tweet1 = { created_at: 'Fri Jan 15 17:10:03 +0000 2016',
-  id: 688045494480846800,
-  id_str: '688045494480846848',
-  text: 'Disassembling JavaScript\'s IIFE Syntax: https://t.co/CLLFISF082 https://t.co/nj4EtNl2uZ',
-  source: '<a href="http://bufferapp.com" rel="nofollow">Buffer</a>',
+  let tweet1 = { created_at: 'Sun Jan 17 12:21:04 +0000 2016',
+  id: 688697543300091900,
+  id_str: '688697543300091905',
+  text: 'RT @Rygu: .@dan_abramov @yogthos Compose everything! https://t.co/lbMuTD9XqQ',
+  source: '<a href="http://twitter.com/download/iphone" rel="nofollow">Twitter for iPhone</a>',
   truncated: false,
   in_reply_to_status_id: null,
   in_reply_to_status_id_str: null,
@@ -100,41 +92,41 @@ module.exports = () => {
   in_reply_to_user_id_str: null,
   in_reply_to_screen_name: null,
   user:
-   { id: 459275531,
-     id_str: '459275531',
-     name: 'JavaScript Live',
-     screen_name: 'JavaScriptDaily',
-     location: '',
-     description: 'Daily JavaScript community news, links and events.',
-     url: 'http://t.co/yTZ4fsOxGj',
+   { id: 70345946,
+     id_str: '70345946',
+     name: 'Dan Abramov',
+     screen_name: 'dan_abramov',
+     location: 'London, England',
+     description: 'Making hot reloading mainstream. Created Redux, React Hot Loader, React DnD. Noob at @facebook. Opinions are my own.',
+     url: 'https://t.co/60kty8djcd',
      entities: { url: [Object], description: [Object] },
      protected: false,
-     followers_count: 182680,
-     friends_count: 40,
-     listed_count: 4355,
-     created_at: 'Mon Jan 09 13:43:05 +0000 2012',
-     favourites_count: 2,
-     utc_offset: null,
-     time_zone: null,
+     followers_count: 16473,
+     friends_count: 1350,
+     listed_count: 612,
+     created_at: 'Mon Aug 31 08:28:07 +0000 2009',
+     favourites_count: 14296,
+     utc_offset: 10800,
+     time_zone: 'St. Petersburg',
      geo_enabled: false,
      verified: false,
-     statuses_count: 5100,
+     statuses_count: 16866,
      lang: 'en',
      contributors_enabled: false,
      is_translator: false,
      is_translation_enabled: false,
-     profile_background_color: '51CBBF',
-     profile_background_image_url: 'http://pbs.twimg.com/profile_background_images/558331836/jsbg.png',
-     profile_background_image_url_https: 'https://pbs.twimg.com/profile_background_images/558331836/jsbg.png',
-     profile_background_tile: true,
-     profile_image_url: 'http://pbs.twimg.com/profile_images/612958776312905729/1D6mR9eF_normal.png',
-     profile_image_url_https: 'https://pbs.twimg.com/profile_images/612958776312905729/1D6mR9eF_normal.png',
-     profile_banner_url: 'https://pbs.twimg.com/profile_banners/459275531/1433778003',
-     profile_link_color: '177A6E',
-     profile_sidebar_border_color: 'F0EDDA',
-     profile_sidebar_fill_color: 'FDFFF0',
-     profile_text_color: '333333',
-     profile_use_background_image: true,
+     profile_background_color: '000000',
+     profile_background_image_url: 'http://abs.twimg.com/images/themes/theme1/bg.png',
+     profile_background_image_url_https: 'https://abs.twimg.com/images/themes/theme1/bg.png',
+     profile_background_tile: false,
+     profile_image_url: 'http://pbs.twimg.com/profile_images/553711083064541184/9VsY9i09_normal.jpeg',
+     profile_image_url_https: 'https://pbs.twimg.com/profile_images/553711083064541184/9VsY9i09_normal.jpeg',
+     profile_banner_url: 'https://pbs.twimg.com/profile_banners/70345946/1448763055',
+     profile_link_color: '000000',
+     profile_sidebar_border_color: '000000',
+     profile_sidebar_fill_color: '000000',
+     profile_text_color: '000000',
+     profile_use_background_image: false,
      has_extended_profile: false,
      default_profile: false,
      default_profile_image: false,
@@ -145,22 +137,108 @@ module.exports = () => {
   coordinates: null,
   place: null,
   contributors: null,
+  retweeted_status:
+   { created_at: 'Sun Jan 17 12:13:03 +0000 2016',
+     id: 688695525676314600,
+     id_str: '688695525676314624',
+     text: '.@dan_abramov @yogthos Compose everything! https://t.co/lbMuTD9XqQ',
+     source: '<a href="http://twitter.com/download/iphone" rel="nofollow">Twitter for iPhone</a>',
+     truncated: false,
+     in_reply_to_status_id: 688694426512797700,
+     in_reply_to_status_id_str: '688694426512797696',
+     in_reply_to_user_id: 70345946,
+     in_reply_to_user_id_str: '70345946',
+     in_reply_to_screen_name: 'dan_abramov',
+     user:
+      { id: 17324927,
+        id_str: '17324927',
+        name: 'Rick',
+        screen_name: 'Rygu',
+        location: 'Amsterdam',
+        description: 'Full-spectrum tech producer at https://t.co/h3iwFe5AgN. We\'re the honest payment platform. Follow for technology.',
+        url: 'https://t.co/XaeU5ak3sT',
+        entities: [Object],
+        protected: false,
+        followers_count: 904,
+        friends_count: 472,
+        listed_count: 100,
+        created_at: 'Tue Nov 11 23:06:44 +0000 2008',
+        favourites_count: 3614,
+        utc_offset: 3600,
+        time_zone: 'Amsterdam',
+        geo_enabled: true,
+        verified: false,
+        statuses_count: 3192,
+        lang: 'en',
+        contributors_enabled: false,
+        is_translator: false,
+        is_translation_enabled: false,
+        profile_background_color: 'B2DFDA',
+        profile_background_image_url: 'http://abs.twimg.com/images/themes/theme13/bg.gif',
+        profile_background_image_url_https: 'https://abs.twimg.com/images/themes/theme13/bg.gif',
+        profile_background_tile: false,
+        profile_image_url: 'http://pbs.twimg.com/profile_images/551856174673313792/6k1ytRu-_normal.png',
+        profile_image_url_https: 'https://pbs.twimg.com/profile_images/551856174673313792/6k1ytRu-_normal.png',
+        profile_banner_url: 'https://pbs.twimg.com/profile_banners/17324927/1402748140',
+        profile_link_color: '3B94D9',
+        profile_sidebar_border_color: 'EEEEEE',
+        profile_sidebar_fill_color: 'FFFFFF',
+        profile_text_color: '333333',
+        profile_use_background_image: true,
+        has_extended_profile: false,
+        default_profile: false,
+        default_profile_image: false,
+        following: false,
+        follow_request_sent: false,
+        notifications: false },
+     geo: null,
+     coordinates: null,
+     place: null,
+     contributors: null,
+     is_quote_status: false,
+     retweet_count: 1,
+     favorite_count: 0,
+     entities:
+      { hashtags: [],
+        symbols: [],
+        user_mentions: [Object],
+        urls: [],
+        media: [Object] },
+     extended_entities: { media: [Object] },
+     favorited: false,
+     retweeted: false,
+     possibly_sensitive: false,
+     possibly_sensitive_appealable: false,
+     lang: 'en' },
   is_quote_status: false,
-  retweet_count: 11,
-  favorite_count: 18,
+  retweet_count: 1,
+  favorite_count: 0,
   entities:
    { hashtags: [],
      symbols: [],
-     user_mentions: [],
-     urls: [ [Object] ],
-     media: [ [Object] ] },
+     user_mentions: [ [Object], [Object], [Object] ],
+     urls: [],
+     media:
+   [ { id: 688558631776849900,
+       id_str: '688558631776849921',
+       indices: [Object],
+       media_url: 'http://pbs.twimg.com/ext_tw_video_thumb/688558631776849921/pu/img/4XxyKIrGJ1DacoX5.jpg',
+       media_url_https: 'https://pbs.twimg.com/ext_tw_video_thumb/688558631776849921/pu/img/4XxyKIrGJ1DacoX5.jpg',
+       url: 'https://t.co/ueYWB1SGel',
+       display_url: 'pic.twitter.com/ueYWB1SGel',
+       expanded_url: 'http://twitter.com/Crashingtv/status/688559279993974784/video/1',
+       type: 'photo',
+       sizes: [Object],
+       source_status_id: 688559279993974800,
+       source_status_id_str: '688559279993974784',
+       source_user_id: 3094874199,
+       source_user_id_str: '3094874199' } ] },
   extended_entities: { media: [ [Object] ] },
   favorited: false,
   retweeted: false,
   possibly_sensitive: false,
   possibly_sensitive_appealable: false,
-  lang: 'en'
-};
+  lang: 'en' };
 
 let convert4digitNumber = ( number ) => {
   let stringNumber = String( number );
@@ -193,10 +271,32 @@ let getRandomValues = ( array ) => {
   return resultValue;
 };
 
+let isRetweeted = ( tweet ) => {
+
+  function checkChartAt( item, charPosition, charSearch) {
+    return item.text.charAt( charPosition ) === charSearch;
+  }
+  return ( checkChartAt( tweet, 0, 'R' ) && checkChartAt( tweet, 1, 'T' ) ) ? true : false;
+};
+
+let hasTweetImage = ( tweet ) => {
+  if ( tweet.entities.hasOwnProperty( 'media' ) ) {
+    return tweet.entities.media[0].media_url;
+  }
+  return 'no image';
+};
+
+let sliceTweetText = ( tweet ) => {
+  return tweet.split( /RT @.*\:/ ).pop();
+};
+
   return {
     tweet0: tweet0,
     tweet1: tweet1,
     convert4digitNumber: convert4digitNumber,
-    getRandomValues:getRandomValues
+    getRandomValues:getRandomValues,
+    isRetweeted: isRetweeted,
+    hasTweetImage: hasTweetImage,
+    sliceTweetText: sliceTweetText
   };
 };

@@ -62,6 +62,35 @@ describe('Global Helper', () => {
     });
   });
 
+  describe('Helper.buildRetweetedObject', () => {
+    it('Helper has a buildRetweetedObject property', () =>{
+      expect( helper ).to.have.property( 'buildRetweetedObject' ).and.is.a( 'function' );
+    });
+
+    it('buildRetweetedObject returns an Object', () =>{
+      expect( helper.buildRetweetedObject( sampleData.tweet1 ) ).to.be.an( 'Object' );
+    });
+
+    it('buildRetweetedObject has a retweet prop', () =>{
+      expect( helper.buildRetweetedObject( sampleData.tweet1 ) ).to.have.property( 'retweet' ).and.is.a( 'Boolean' );
+    });
+
+    it('buildRetweetedObject has a whoRetweeted prop', () =>{
+      expect( helper.buildRetweetedObject( sampleData.tweet1 ) ).to.have.property( 'whoRetweeted' ).be.a( 'String' ).and.eq( 'Dan Abramov' );
+    });
+
+    it('buildRetweetedObject returns the tweet\'s owner as user', () =>{
+      let tweet = helper.buildRetweetedObject( sampleData.tweet1 );
+      expect( tweet.name ).to.eq( 'Rick' );
+      expect( tweet.name ).not.to.eq( 'Dan Abramov' );
+    });
+
+    it('buildRetweetedObject returns the text without RT word', () =>{
+      let tweet = helper.buildRetweetedObject( sampleData.tweet1 );
+      expect( tweet.text ).not.to.include( 'RT' );
+    });
+  });
+
   describe('Helper.arrayRandomValues', () => {
     let arrayTest = new Array(15);
 
@@ -142,5 +171,50 @@ describe('getRandomValues', () => {
   it('returns a number between array length and 0', () => {
     let arrayTest = new Array(10);
     expect( sampleData.getRandomValues( arrayTest ) ).to.be.within( 0, arrayTest.length );
+  });
+});
+
+describe('isRetweeted', () => {
+  it('is defined', () => {
+    expect( sampleData.isRetweeted ).not.eq( undefined );
+  });
+
+  it('Returns a Boolean', () => {
+    expect( sampleData.isRetweeted( sampleData.tweet1) ).to.be.a( 'Boolean' );
+  });
+
+  it('Returns "false" if the tweet doesn\'t contains "RT"', () => {
+    expect( sampleData.isRetweeted( sampleData.tweet0 ) ).to.eq( false );
+  });
+
+  it('Returns "true" if the tweet contains "RT"', () => {
+    expect( sampleData.isRetweeted( sampleData.tweet1 ) ).to.eq( true );
+  });
+});
+
+describe('hasTweetImage', () => {
+  it('is defined', () => {
+    expect( sampleData.hasTweetImage ).not.eq( undefined );
+  });
+
+  it('Returns the image url if exists', () => {
+    let tweet = sampleData.tweet1;
+    expect( sampleData.hasTweetImage( tweet ) ).to.include( 'http' );
+  });
+
+  it('Returns "no image" if the url dosen\'t exist', () => {
+    let tweet2 = sampleData.tweet0;
+    expect( sampleData.hasTweetImage( tweet2 ) ).to.eq( 'no image' );
+  });
+});
+
+describe('sliceTweetText', () => {
+  it('is defined', () => {
+    expect( sampleData.sliceTweetText ).not.eq( undefined );
+  });
+
+  it('Returns the text without "RT"', () => {
+    let tweet = sampleData.tweet1.text;
+    expect( sampleData.sliceTweetText( tweet ) ).not.to.include( '/RT @.*\: /' );
   });
 });

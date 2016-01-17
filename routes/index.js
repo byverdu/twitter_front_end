@@ -4,6 +4,7 @@ const express = require( 'express' );
 const router = express.Router();
 let storage = require( '../config/storage' );
 
+// initial call to twitter API
 require( '../config/twitter' )();
 
 router.get( '/', ( request, response ) => {

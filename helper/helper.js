@@ -5,17 +5,11 @@ function Helper() {}
 Helper.prototype.buildTweetObject = ( tweet ) => {
 
   let backgroundImage = tweet.user.profile_banner_url || 'images/defaultBackground.jpg';
-  let tweetImage;
-
-  if ( tweet.entities.hasOwnProperty( 'media' ) ) {
-    tweetImage = tweet.entities.media[0].media_url;
-  } else {
-    tweetImage = '';
-  }
 
   return {
+    retweet: false,
     text: tweet.text,
-    tweetImage: tweetImage,
+    tweetImage: hasTweetImage( tweet ),
     name: tweet.user.name,
     description: tweet.user.description,
     screen_name: tweet.user.screen_name,
@@ -24,6 +18,28 @@ Helper.prototype.buildTweetObject = ( tweet ) => {
     followers_count: convert4digitNumber( tweet.user.followers_count ),
     friends_count: convert4digitNumber( tweet.user.friends_count ),
     statuses_count: convert4digitNumber( tweet.user.statuses_count )
+  };
+};
+
+Helper.prototype.buildRetweetedObject = ( tweet ) => {
+
+  let backgroundImage = tweet.retweeted_status.user.profile_banner_url || 'images/defaultBackground.jpg';
+
+  console.log(tweet.text.split( /RT @.*\: / ));
+
+  return {
+    retweet: true,
+    whoRetweeted: tweet.user.name,
+    name: tweet.retweeted_status.user.name,
+    screen_name: tweet.retweeted_status.user.screen_name,
+    text: sliceTweetText( tweet.text ),
+    tweetImage: hasTweetImage( tweet ),
+    profile_banner_url: backgroundImage,
+    profile_image_url: tweet.retweeted_status.user.profile_image_url,
+    followers_count: convert4digitNumber( tweet.retweeted_status.user.followers_count ),
+    friends_count: convert4digitNumber( tweet.retweeted_status.user.friends_count ),
+    statuses_count: convert4digitNumber( tweet.retweeted_status.user.statuses_count )
+
   };
 };
 
@@ -57,14 +73,43 @@ Helper.prototype.arrayRandomValues = ( array ) => {
   return resultArray;
 };
 
-Helper.prototype.buildToFollow = ( store, randomArr, finalStore) => {
-  store.forEach( ( el, ind, arr ) => {
-    
-    if ( randomArr.indexOf( ind ) !== -1 ) {
-      finalStore.push( arr[ind] );
+Helper.prototype.whichObjectBuild = ( tweetMethod, retweetMethod, tweet)  => {
+
+  if ( isRetweeted( tweet ) ) {
+    return retweetMethod( tweet ) ;
+  } else {
+    return tweetMethod( tweet ) ;
+  }
+};
+
+Helper.prototype.buildToFollow = ( store, randomArray, finalStore) => {
+  store.forEach( ( el, ind, array ) => {
+
+    if ( randomArray.indexOf( ind ) !== -1 ) {
+      finalStore.push( array[ind] );
     }
   });
 };
+
+function hasTweetImage( tweet ) {
+  if ( tweet.entities.hasOwnProperty( 'media' ) ) {
+    return tweet.entities.media[0].media_url;
+  }
+  return 'no image';
+}
+
+function sliceTweetText( tweet ) {
+  console.log(tweet.split( /RT @.*\: / ));
+  return tweet.split( /RT @.*\: / ).pop();
+}
+
+function isRetweeted( tweet ){
+
+  function checkChartAt( item, charPosition, charSearch) {
+    return item.text.charAt( charPosition ) === charSearch;
+  }
+  return ( checkChartAt( tweet, 0, 'R' ) && checkChartAt( tweet, 1, 'T' ) ) ? true : false;
+}
 
 function getRandomValues( totalCount ) {
   let resultValue = Math.floor( Math.random() * ( totalCount - 0) + 0 );

@@ -17,8 +17,11 @@ module.exports = () => {
   TwitterAPI.get( config.tweetUrlAPI, config.tweetQueryAPI, (err, tweets) => {
 
     tweets.forEach( (tweet) => {
-      tweetStore.push( helper.buildTweetObject( tweet ) );
+
+      tweetStore.push( helper.whichObjectBuild( helper.buildTweetObject, helper.buildRetweetedObject, tweet) );
     });
+
+    // console.log(tweetStore);
 
     toFollowRandom = helper.arrayRandomValues( tweetStore );
     helper.buildToFollow( tweetStore, toFollowRandom, toFollowStore);
