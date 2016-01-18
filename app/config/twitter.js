@@ -21,8 +21,6 @@ module.exports = () => {
       tweetStore.push( helper.whichObjectBuild( helper.buildTweetObject, helper.buildRetweetedObject, tweet) );
     });
 
-    // console.log(tweetStore);
-
     toFollowRandom = helper.arrayRandomValues( tweetStore );
     helper.buildToFollow( tweetStore, toFollowRandom, toFollowStore);
 

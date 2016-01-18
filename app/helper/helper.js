@@ -25,8 +25,6 @@ Helper.prototype.buildRetweetedObject = ( tweet ) => {
 
   let backgroundImage = tweet.retweeted_status.user.profile_banner_url || 'images/defaultBackground.jpg';
 
-  console.log(tweet.text.split( /RT @.*\: / ));
-
   return {
     retweet: true,
     whoRetweeted: tweet.user.name,
@@ -99,7 +97,6 @@ function hasTweetImage( tweet ) {
 }
 
 function sliceTweetText( tweet ) {
-  console.log(tweet.split( /RT @.*\: / ));
   return tweet.split( /RT @.*\: / ).pop();
 }
 
