@@ -22,6 +22,7 @@ router.get( '/', ( request, response ) => {
   response.render( 'index', objectToRender );
 });
 
+// Creating path for ajax client call to load extra tweets (infinite scrolling)
 router.get( '/secondFeed', ( request, response ) => {
   let secondTweetStore = storage.getItem( 'secondTweetStore' );
 

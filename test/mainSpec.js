@@ -1,7 +1,8 @@
 'use strict';
 
 import chai from 'chai';
-import Helper from '../helper/helper';
+import Helper from '../app/helper/helper';
+// let = require('../app/helper/prehelper')();
 let sampleData = require( './sampleData' )();
 let helper = new Helper();
 let expect = chai.expect;
@@ -113,108 +114,113 @@ describe('Global Helper', () => {
   });
 });
 
-describe('convert4digitNumber', () => {
-  let tweetsCount = sampleData.tweet0.user.statuses_count;
-  let convert4digitNumber = sampleData.convert4digitNumber;
+describe('prehelper functions', () =>{
 
-  it('convert4digitNumber is defined', () => {
-    expect( convert4digitNumber ).to.not.eq( undefined );
+  describe('convert4digitNumber', () => {
+    let tweetsCount = sampleData.tweet0.user.statuses_count;
+    let convert4digitNumber = sampleData.convert4digitNumber;
+
+    it('convert4digitNumber is defined', () => {
+      expect( convert4digitNumber ).to.not.eq( undefined );
+    });
+
+    it('convert4digitNumber returns a String', () => {
+      expect( convert4digitNumber( tweetsCount ) ).to.be.a( 'String' );
+      expect( convert4digitNumber( sampleData.tweet0.user.followers_count ) ).to.be.a( 'String' );
+    });
+
+    it('convert4digitNumber accepts a Number as argument', () => {
+
+      function testConvert4digitNumber( number ) {
+        expect( arguments[0] ).to.be.a( 'Number' );
+        expect( arguments[1] ).to.eq( undefined );
+        return number;
+      }
+
+      testConvert4digitNumber( tweetsCount );
+    });
+
+    it('convert4digitNumber converts a 999 into 999 format', () => {
+      expect( convert4digitNumber( 999 ) ).to.eq( '999' );
+    });
+
+    it('convert4digitNumber converts a 7.500 into 7.5K format', () => {
+      expect( convert4digitNumber( 7500 ) ).to.eq( '7.5K' );
+    });
+
+    it('convert4digitNumber converts a 37.500 into 37.5K format', () => {
+      expect( convert4digitNumber( 37500 ) ).to.eq( '37.5K' );
+    });
+
+    it('convert4digitNumber converts a 750.000 into 750K format', () => {
+      expect( convert4digitNumber( 750000 ) ).to.eq( '750K' );
+    });
+
+    it('convert4digitNumber converts a 1.750.000 into 1.75M format', () => {
+      expect( convert4digitNumber( 1750000 ) ).to.eq( '1.75M' );
+    });
   });
 
-  it('convert4digitNumber returns a String', () => {
-    expect( convert4digitNumber( tweetsCount ) ).to.be.a( 'String' );
-    expect( convert4digitNumber( sampleData.tweet0.user.followers_count ) ).to.be.a( 'String' );
+  describe('getRandomValues', () => {
+
+    it('getRandomValues is defined', () => {
+      expect( sampleData.getRandomValues ).not.to.eq( undefined );
+    });
+
+    it('returns a number between array length and 0', () => {
+      expect( sampleData.getRandomValues( [] ) ).to.be.a( 'Number' );
+    });
+
+    it('returns a number between array length and 0', () => {
+      let arrayTest = new Array(10).length;
+      expect( sampleData.getRandomValues( arrayTest ) ).to.be.within( 0, arrayTest );
+    });
   });
 
-  it('convert4digitNumber accepts a Number as argument', () => {
+  describe('isRetweeted', () => {
+    it('is defined', () => {
+      expect( sampleData.isRetweeted ).not.eq( undefined );
+    });
 
-    function testConvert4digitNumber( number ) {
-      expect( arguments[0] ).to.be.a( 'Number' );
-      expect( arguments[1] ).to.eq( undefined );
-      return number;
-    }
+    it('Returns a Boolean', () => {
+      expect( sampleData.isRetweeted( sampleData.tweet1) ).to.be.a( 'Boolean' );
+    });
 
-    testConvert4digitNumber( tweetsCount );
+    it('Returns "false" if the tweet doesn\'t contains "RT"', () => {
+      expect( sampleData.isRetweeted( sampleData.tweet0 ) ).to.eq( false );
+    });
+
+    it('Returns "true" if the tweet contains "RT"', () => {
+      expect( sampleData.isRetweeted( sampleData.tweet1 ) ).to.eq( true );
+    });
   });
 
-  it('convert4digitNumber converts a 999 into 999 format', () => {
-    expect( convert4digitNumber( 999 ) ).to.eq( '999' );
+  describe('hasTweetImage', () => {
+    it('is defined', () => {
+      expect( sampleData.hasTweetImage ).not.eq( undefined );
+    });
+
+    it('Returns the image url if exists', () => {
+      let tweet = sampleData.tweet1;
+      expect( sampleData.hasTweetImage( tweet ) ).to.include( 'http' );
+    });
+
+    it('Returns "no image" if the url dosen\'t exist', () => {
+      let tweet2 = sampleData.tweet0;
+      expect( sampleData.hasTweetImage( tweet2 ) ).to.eq( 'no image' );
+    });
   });
 
-  it('convert4digitNumber converts a 7.500 into 7.5K format', () => {
-    expect( convert4digitNumber( 7500 ) ).to.eq( '7.5K' );
+  describe('splitTweetText', () => {
+    it('is defined', () => {
+      expect( sampleData.splitTweetText ).not.eq( undefined );
+    });
+
+    it('Returns the text without "RT"', () => {
+      let tweet = sampleData.tweet1.text;
+      let pattern = /RT @.*\: /;
+      expect( sampleData.splitTweetText( tweet, pattern ) ).not.to.include( /RT @.*\: / );
+    });
   });
 
-  it('convert4digitNumber converts a 37.500 into 37.5K format', () => {
-    expect( convert4digitNumber( 37500 ) ).to.eq( '37.5K' );
-  });
-
-  it('convert4digitNumber converts a 750.000 into 750K format', () => {
-    expect( convert4digitNumber( 750000 ) ).to.eq( '750K' );
-  });
-
-  it('convert4digitNumber converts a 1.750.000 into 1.75M format', () => {
-    expect( convert4digitNumber( 1750000 ) ).to.eq( '1.75M' );
-  });
-});
-
-describe('getRandomValues', () => {
-
-  it('getRandomValues is defined', () => {
-    expect( sampleData.getRandomValues ).not.to.eq( undefined );
-  });
-
-  it('returns a number between array length and 0', () => {
-    expect( sampleData.getRandomValues( [] ) ).to.be.a( 'Number' );
-  });
-
-  it('returns a number between array length and 0', () => {
-    let arrayTest = new Array(10);
-    expect( sampleData.getRandomValues( arrayTest ) ).to.be.within( 0, arrayTest.length );
-  });
-});
-
-describe('isRetweeted', () => {
-  it('is defined', () => {
-    expect( sampleData.isRetweeted ).not.eq( undefined );
-  });
-
-  it('Returns a Boolean', () => {
-    expect( sampleData.isRetweeted( sampleData.tweet1) ).to.be.a( 'Boolean' );
-  });
-
-  it('Returns "false" if the tweet doesn\'t contains "RT"', () => {
-    expect( sampleData.isRetweeted( sampleData.tweet0 ) ).to.eq( false );
-  });
-
-  it('Returns "true" if the tweet contains "RT"', () => {
-    expect( sampleData.isRetweeted( sampleData.tweet1 ) ).to.eq( true );
-  });
-});
-
-describe('hasTweetImage', () => {
-  it('is defined', () => {
-    expect( sampleData.hasTweetImage ).not.eq( undefined );
-  });
-
-  it('Returns the image url if exists', () => {
-    let tweet = sampleData.tweet1;
-    expect( sampleData.hasTweetImage( tweet ) ).to.include( 'http' );
-  });
-
-  it('Returns "no image" if the url dosen\'t exist', () => {
-    let tweet2 = sampleData.tweet0;
-    expect( sampleData.hasTweetImage( tweet2 ) ).to.eq( 'no image' );
-  });
-});
-
-describe('sliceTweetText', () => {
-  it('is defined', () => {
-    expect( sampleData.sliceTweetText ).not.eq( undefined );
-  });
-
-  it('Returns the text without "RT"', () => {
-    let tweet = sampleData.tweet1.text;
-    expect( sampleData.sliceTweetText( tweet ) ).not.to.include( '/RT @.*\: /' );
-  });
 });

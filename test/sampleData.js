@@ -265,8 +265,7 @@ let convert4digitNumber = ( number ) => {
   return resultString;
 };
 
-let getRandomValues = ( array ) => {
-  let arrayLength = array.length;
+let getRandomValues = ( arrayLength ) => {
   let resultValue = Math.floor( Math.random() * ( arrayLength - 0) + 0 );
   return resultValue;
 };
@@ -290,6 +289,10 @@ let sliceTweetText = ( tweet ) => {
   return tweet.split( /RT @.*\:/ ).pop();
 };
 
+let splitTweetText = ( tweet, pattern ) => {
+    return tweet.split( pattern ).pop();
+  };
+
   return {
     tweet0: tweet0,
     tweet1: tweet1,
@@ -297,6 +300,6 @@ let sliceTweetText = ( tweet ) => {
     getRandomValues:getRandomValues,
     isRetweeted: isRetweeted,
     hasTweetImage: hasTweetImage,
-    sliceTweetText: sliceTweetText
+    splitTweetText: splitTweetText
   };
 };

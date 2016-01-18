@@ -1,4 +1,4 @@
-* {
-  color: red;
-  width: 1px;
-}
+// calling all files to assemble
+
+@import 'partials/scaffold';
+@import 'partials/tweet';

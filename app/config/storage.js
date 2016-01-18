@@ -1,4 +1,4 @@
-// storage configuration, saves Xray values
+// storage configuration, saves Twitter API values
 'use strict';
 
 let storage = require('node-persist');

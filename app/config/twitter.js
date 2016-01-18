@@ -14,21 +14,23 @@ module.exports = () => {
   let toFollowRandom;
   let userObject;
 
+  // Call to API to retrieve latest tweets
   TwitterAPI.get( config.tweetUrlAPI, config.tweetQueryAPI, (err, tweets) => {
 
     tweets.forEach( (tweet) => {
-
       tweetStore.push( helper.whichObjectBuild( helper.buildTweetObject, helper.buildRetweetedObject, tweet) );
     });
 
     toFollowRandom = helper.arrayRandomValues( tweetStore );
     helper.buildToFollow( tweetStore, toFollowRandom, toFollowStore);
 
+    // Setting stores to save
     storage.setItem( 'initialTweetStore', tweetStore.splice( 0, 10 ) );
     storage.setItem( 'secondTweetStore',  tweetStore );
     storage.setItem( 'toFollowStore',  toFollowStore );
   });
 
+  // Call to API to retrieve user profile (byverdu)
   TwitterAPI.get( config.userUrlAPI, config.userQueryAPI, ( err, user ) => {
 
     userObject = helper.buildUserObject( user );
