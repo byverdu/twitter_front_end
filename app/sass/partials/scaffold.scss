@@ -1,8 +1,16 @@
 // Project structure
 
+html {
+	background-color: $backgroundColor;
+}
+
+body {
+  font: 14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .twitter{
   border: 1px solid red;
-  width: 1200px;
+  min-width: 926px;
   margin: 0 auto;
   padding: 70px 0;
   display: flex;

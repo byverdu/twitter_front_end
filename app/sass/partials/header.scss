@@ -1,9 +1,10 @@
 // header
 .twitterHeader{
   width: 100%;
-  height: 50px;
+  min-width: 926px;
+  height: 46px;
   position: fixed;
-  box-shadow: 1px 1px 1px;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
   background: white;
   z-index: 1;
   top: 0;
@@ -14,19 +15,51 @@
   &__wrapper {
     width: 1200px;
     margin: 0 auto;;
-    nav {
+    &--navs {
       display: inline-block;
     }
   }
 
-  .twitterHeader__navIcons {
+  &__navIcons {
+    color: $greyColor;
+
+    .active {
+      border-bottom: 5px solid $redColor;
+    }
+
+    &--text {
+      font-weight: bold;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      padding: 0 4px;
+      font-size: 14px;
+      position: relative;
+      top: -5px;
+    }
+
+    &--list {
+      li[class^="icon-"] {
+        font-size: 20px;
+      }
+    }
+
     &--item {
       list-style: none;
-      display: inline-block;;
+      display: inline-block;
+      padding: 0 12px 6px 12px;
+
+      &:hover {
+        color: $redColor;
+        border-bottom: 5px solid $redColor;
+        cursor: pointer;
+      }
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 
-  .twitterHeader__navSettings {
+  &__navSettings {
     float: right;
     &--item {
       list-style: none;

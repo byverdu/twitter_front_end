@@ -1,8 +1,9 @@
 .twitterHeader {
   width: 100%;
-  height: 50px;
+  min-width: 926px;
+  height: 46px;
   position: fixed;
-  box-shadow: 1px 1px 1px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   background: white;
   z-index: 1;
   top: 0;
@@ -12,20 +13,46 @@
   .twitterHeader__wrapper {
     width: 1200px;
     margin: 0 auto; }
-    .twitterHeader__wrapper nav {
+    .twitterHeader__wrapper--navs {
       display: inline-block; }
-  .twitterHeader .twitterHeader__navIcons--item {
-    list-style: none;
-    display: inline-block; }
-  .twitterHeader .twitterHeader__navSettings {
+  .twitterHeader__navIcons {
+    color: RGBA(101, 117, 128, 1); }
+    .twitterHeader__navIcons .active {
+      border-bottom: 5px solid RGBA(229, 85, 103, 1); }
+    .twitterHeader__navIcons--text {
+      font-weight: bold;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      padding: 0 4px;
+      font-size: 14px;
+      position: relative;
+      top: -5px; }
+    .twitterHeader__navIcons--list li[class^="icon-"] {
+      font-size: 20px; }
+    .twitterHeader__navIcons--item {
+      list-style: none;
+      display: inline-block;
+      padding: 0 12px 6px 12px; }
+      .twitterHeader__navIcons--item:hover {
+        color: RGBA(229, 85, 103, 1);
+        border-bottom: 5px solid RGBA(229, 85, 103, 1);
+        cursor: pointer; }
+      .twitterHeader__navIcons--item a {
+        text-decoration: none; }
+  .twitterHeader__navSettings {
     float: right; }
-    .twitterHeader .twitterHeader__navSettings--item {
+    .twitterHeader__navSettings--item {
       list-style: none;
       display: inline-block; }
 
+html {
+  background-color: RGBA(245, 248, 250, 1); }
+
+body {
+  font: 14px "Helvetica Neue",Helvetica,Arial,sans-serif; }
+
 .twitter {
   border: 1px solid red;
-  width: 1200px;
+  min-width: 926px;
   margin: 0 auto;
   padding: 70px 0;
   display: flex;

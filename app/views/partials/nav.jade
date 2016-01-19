@@ -1,17 +1,16 @@
-- var nav_icon = [{class: 'icon-home active', text: 'Home'}, {class: 'icon-bell', text: 'Notifications'}, {class: 'icon-slack', text: 'Discover'}, {class: 'icon-user', text: 'Me'}];
+- var nav_icon = [{class: 'icon-home active', text: 'Home'},{class: 'icon-slack', text: 'Moments'},{class: 'icon-bell', text: 'Notifications'},{class: 'icon-user', text: 'Messages'}];
 
 header.twitterHeader
   .twitterHeader__wrapper
   
-    nav.twitterHeader__navIcons
+    nav.twitterHeader__navIcons.twitterHeader__wrapper--navs
       ul.twitterHeader__navIcons--list
         each val in nav_icon
-          li(class="#{val.class} twitterHeader__navIcons--item")
-            a(href="/"): span.text= val.text
+          li(class="#{val.class} twitterHeader__navIcons--item"): span.twitterHeader__navIcons--text= val.text
         li.icon-twitter.twitterHeader__navIcons--item
     
     
-    nav.twitterHeader__navSettings
+    nav.twitterHeader__navSettings.twitterHeader__wrapper--navs
       ul.twitterHeader__navSettings--list
         li.twitterHeader__navSettings--item
           input(type="text", placeholder=" Search Twitter")
