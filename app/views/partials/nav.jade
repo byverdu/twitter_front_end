@@ -1,4 +1,4 @@
-- var nav_icon = [{class: 'icon-home active', text: 'Home'},{class: 'icon-slack', text: 'Moments'},{class: 'icon-bell', text: 'Notifications'},{class: 'icon-user', text: 'Messages'}];
+- var nav_icon = [{class: 'icon-home active', text: 'Home'},{class: 'icon-slack', text: 'Moments'},{class: 'icon-bell', text: 'Notifications'},{class: 'icon-envelope', text: 'Messages'}];
 
 header.twitterHeader
   .twitterHeader__wrapper
@@ -15,6 +15,5 @@ header.twitterHeader
         li.twitterHeader__navSettings--item
           input(type="text", placeholder=" Search Twitter")
           span.icon-search
-        li.icon-envelope.twitterHeader__navSettings--item
-        li.icon-cog.twitterHeader__navSettings--item
-        li.icon-quill.twitterHeader__navSettings--item: a(href="#")
+        li.icon-image.twitterHeader__navSettings--item: img(src="#{userStore.profile_image_url}", alt="user image for #{userStore.name}")
+        li.icon-quill.twitterHeader__navSettings--item: span Tweet

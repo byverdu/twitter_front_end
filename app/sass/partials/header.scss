@@ -1,7 +1,6 @@
 // header
 .twitterHeader{
   width: 100%;
-  min-width: 926px;
   height: 46px;
   position: fixed;
   border-bottom: 1px solid rgba(0,0,0,0.15);
@@ -13,7 +12,8 @@
   bottom: 0;
 
   &__wrapper {
-    width: 1200px;
+    min-width: 926px;
+    max-width: 1200px;
     margin: 0 auto;;
     &--navs {
       display: inline-block;
@@ -39,6 +39,16 @@
     &--list {
       li[class^="icon-"] {
         font-size: 20px;
+      }
+      .icon-twitter {
+        color: $twitterColor;
+        position: relative;
+        left: 15%;
+        &:hover {
+          color: $twitterColor;
+          border-bottom: none;
+          cursor: default;;
+        }
       }
     }
 
