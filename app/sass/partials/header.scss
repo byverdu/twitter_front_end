@@ -1,0 +1,36 @@
+// header
+.twitterHeader{
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  box-shadow: 1px 1px 1px;
+  background: white;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &__wrapper {
+    width: 1200px;
+    margin: 0 auto;;
+    nav {
+      display: inline-block;
+    }
+  }
+
+  .twitterHeader__navIcons {
+    &--item {
+      list-style: none;
+      display: inline-block;;
+    }
+  }
+
+  .twitterHeader__navSettings {
+    float: right;
+    &--item {
+      list-style: none;
+      display: inline-block;
+    }
+  }
+}

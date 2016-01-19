@@ -1,25 +1,24 @@
-.feed_news
-  h2 Tweets
-  each tweet in secondTweetStore
-    .tweet
-      include ./partials/tweetUserProfile
-      
-      if( tweet.retweet === true )
-        .retweet
-          span.icon-retweet
-          span #{ tweet.whoRetweeted } retweeted
-          
-      img( src=tweet.profile_image_url, alt=`image for ${ tweet.screen_name }` )
-      
-      .tweet_content
-        h3 #{tweet.name} #[span= `@${tweet.screen_name}`]
-        p #{tweet.text}
-        if ( tweet.tweetImage !== 'no image')
-          img(src="#{ tweet.tweetImage }", alt="image tweet")
-      
-      .social_area
-        ul
-          li.icon-reply Reply
-          li.icon-retweet Retweet
-          li.icon-star Favorite
-          li ...More
+h2 Tweets
+each tweet in secondTweetStore
+  .tweet
+    include ./partials/tweetUserProfile
+    
+    if( tweet.retweet === true )
+      .retweet
+        span.icon-retweet
+        span #{ tweet.whoRetweeted } retweeted
+        
+    img( src=tweet.profile_image_url, alt=`image for ${ tweet.screen_name }` )
+    
+    .tweet_content
+      h3 #{tweet.name} #[span= `@${tweet.screen_name}`]
+      p #{tweet.text}
+      if ( tweet.tweetImage !== 'no image')
+        img(src="#{ tweet.tweetImage }", alt="image tweet")
+    
+    .social_area
+      ul
+        li.icon-reply Reply
+        li.icon-retweet Retweet
+        li.icon-star Favorite
+        li ...More

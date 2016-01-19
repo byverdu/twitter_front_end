@@ -1,3 +1,36 @@
-*{
-  text-decoration: underline;
+// Project structure
+
+.twitter{
+  border: 1px solid red;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  img{width: 100px;}
+
+  .twitterContainer {
+    display: flex;
+    flex: 1;
+
+      &__main {
+        width: 50%;
+        flex: 1;
+        border: 1px solid green;
+      }
+
+      &__aside {
+        width: 24%;
+
+        &--left {
+          order: -1;
+          border: 1px solid;
+        }
+        &--right {
+          border: 1px solid orange;
+        }
+      }
+  }
 }

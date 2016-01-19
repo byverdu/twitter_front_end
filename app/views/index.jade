@@ -1,24 +1,26 @@
 extends ./partials/layout
 
 block content
-  .wrapper  
-    include ./partials/nav
-    section.main_content 
+  include ./partials/nav
+  
+  .twitter  
+    section.twitterContainer 
       
-      aside     
+      section.twitterContainer__main     
+        include ./partials/feedNews
+      
+        #postswrapper  
+      
+      aside.twitterContainer__aside.twitterContainer__aside--left
         .user_profile
           include ./partials/userProfile
         .trends
           include ./partials/trends
             
-      .feed_news  
-        include ./partials/feedNews
-      
-      aside
+      aside.twitterContainer__aside.twitterContainer__aside--right
         .who_follow
           include ./partials/toFollow
         .footer
           include ./partials/footer
       
-      #postswrapper  
         
