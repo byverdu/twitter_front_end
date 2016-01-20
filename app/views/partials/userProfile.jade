@@ -1,9 +1,13 @@
-img(src="#{ userStore.profile_banner_url}", alt="profile banner")
-img(src="#{ userStore.profile_image_url}", alt="profile iamge")
-h3 #{ userStore.name }
-h5 @#{ userStore.screen_name }
+- var userUrls = ['https://twitter.com/byverdu','https://twitter.com/byverdu/following','https://twitter.com/byverdu/followers']
+.twitterProfile__header
+  .twitterProfile__header--banner(style="background-image: url(#{ userStore.profile_banner_url})")
 
-ul
-  li TWEETS #[span #{ userStore.statuses_count }]
-  li FOLLOWING #[span #{ userStore.followers_count }]
-  li FOLLOWERS #[span #{ userStore.friends_count }]
+.twitterProfile__body
+  img(class="twitterProfile__body--imageProfile", src="#{ userStore.profile_image_url}", alt="profile iamge")
+  .twitterProfile__body--info
+    h3.twitterProfile__body--name #{ userStore.name }
+    h5.twitterProfile__body--screenName @#{ userStore.screen_name }
+  ul.twitterProfile__body--list
+    li.twitterProfile__body--item: a(href="#{userUrls[0]}") TWEETS #[span #{ userStore.statuses_count }]
+    li.twitterProfile__body--item: a(href="#{userUrls[1]}") FOLLOWING #[span #{ userStore.friends_count }]
+    li.twitterProfile__body--item: a(href="#{userUrls[2]}") FOLLOWERS #[span #{ userStore.followers_count }]

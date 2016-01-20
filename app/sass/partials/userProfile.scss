@@ -1,0 +1,91 @@
+// User profile styles
+
+.twitterProfile {
+
+  background-color: $whiteColorBackground;
+  border-radius: 4px;
+
+  &__header {
+    &--banner {
+      // background image added dinamycly on jade file
+      background-size: 100%;
+      // border-bottom: 1px solid $greyColorBorder;
+      height: 95px;
+      border-radius: 4px 4px 0 0;
+      background-position: 0 50%;
+      width: 100%;
+      padding: 0;
+      margin-left: -1px;
+      margin-top: -1px;
+    }
+  }
+
+  &__body {
+    padding: 12px;
+    border: 1px solid $greyColorBorder;
+    border-radius: 0 0 4px 4px;
+    position: relative;
+
+    &--list {
+      padding: 0;
+      margin: 5px 0 -5px;
+    }
+
+    &--item {
+      display: inline-block;
+      list-style: none;
+      padding: 0 10px;
+
+      &:first-child {
+        padding-left: 0;
+        padding-right: 10px;
+      }
+
+      a {
+        color: $greyColorLighter;
+        font-size: 10px;
+        letter-spacing: .02em;
+        text-decoration: none;
+
+        &:hover {
+          color: $redColor;
+        }
+      }
+
+      span {
+        color: $redColor;
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        padding-top: 3px;
+      }
+    }
+
+    &--imageProfile {
+      border-radius: 7px;
+      height: 72px;
+      width: 72px;
+      border: 3px solid $whiteColorBackground;
+      box-sizing: border-box;
+      position: absolute;
+      top: -30px;
+    }
+
+    &--info {
+      width: 145px;
+      position: relative;
+      top: -10px;
+      left: 94px;
+    }
+
+    &--name,
+    &--screenName {
+      margin: 5px 0;
+    }
+
+    &--screenName {
+      color: $greyColor;
+      font-weight: 400;
+    }
+  }
+}

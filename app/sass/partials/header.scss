@@ -4,7 +4,7 @@
   height: 46px;
   position: fixed;
   border-bottom: 1px solid $greyColorBorder;
-  background: white;
+  background: $whiteColorBackground;
   z-index: 1;
   top: 0;
   left: 0;
@@ -90,7 +90,7 @@
         margin: 8px;
         border-radius: 5px;
         background: $redColor;
-        color: white;
+        color: $whiteColorBackground;
         font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 20px;
 
@@ -124,7 +124,7 @@
         border-radius: 50px;
         border: 1px solid $greyColorBorder;
         padding: 10px;
-        background: $backgroundColor;
+        background: $greyColorBackground;
         font-weight: 600;
         position: relative;
         top: -10px;
