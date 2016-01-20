@@ -6,28 +6,54 @@ html {
 
 body {
   font: 14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
 }
 
 .twitter{
-  border: 1px solid red;
-  min-width: 926px;
-	max-width: 1200px;
+  width: 950px;
   margin: 0 auto;
   padding: 70px 0;
-  display: flex;
-  flex-direction: column;
   position: relative;
 
   img{width: 100px;}
 
   .twitterContainer {
-    display: flex;
-    flex: 1;
+    padding: 0 30px;
+
+      &__main {
+        width: 62%;
+        border: 1px solid $greyColorBorder;
+        border-radius: 5px;
+        float: right;
+      }
+
+      &__aside {
+        width: 34%;
+
+        &--left {
+          border: 1px solid $greyColorBorder;
+        }
+        &--right {
+          border: 1px solid $greyColorBorder;
+        }
+      }
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  .twitter{
+    width: 1200px;
+    display: flex;;
+    flex-direction: column;
+
+    .twitterContainer {
+      display: flex;
 
       &__main {
         width: 50%;
         flex: 1;
-        border: 1px solid green;
+        float: none;
+        margin: 0 10px;
       }
 
       &__aside {
@@ -35,11 +61,10 @@ body {
 
         &--left {
           order: -1;
-          border: 1px solid;
         }
         &--right {
-          border: 1px solid orange;
         }
       }
+    }
   }
 }
