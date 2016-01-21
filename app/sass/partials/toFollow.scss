@@ -1,10 +1,7 @@
 .twitterWhoToFollow {
   &__wrapper {
     position: relative;
-    // display: flex;
-    //
-    // flex-direction: column;
-
+    
     @include commonWrapper();
 
     &--title {
@@ -18,15 +15,11 @@
       padding: 0;
       margin: 0;
       position: relative;
-      // float: right;
     }
-
 
     &--item {
       list-style: none;
       position: relative;
-      // display: flex;
-      // flex-direction: row;
     }
 
     &--info {
@@ -41,17 +34,10 @@
       height: 48px;
       border-radius: 5px;
       margin-bottom: 30px;
-      // flex: 1;
-      // display: block;;
     }
 
     &--name {
       margin: 0;
-      // float: right;
-      // position: relative;
-      // right: 50px;
-      // top: -10px;
-      // order: -1;
       span {
         color: $greyColorLighter;
       }

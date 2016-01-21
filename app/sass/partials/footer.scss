@@ -1,0 +1,20 @@
+.twitterFooter {
+  &__wrapper {
+    @include commonWrapper();
+    padding: 12px;
+
+    &--item {
+      list-style: none;
+      display: inline-block;
+      margin: 2px;
+      font-size: 12px;
+      padding-right: 3px;
+      color: $greyColorLighter;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

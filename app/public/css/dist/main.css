@@ -288,4 +288,22 @@ body {
       position: relative;
       left: -8px; }
 
+.twitterFooter__wrapper {
+  background-color: white;
+  border-radius: 4px;
+  padding: 12px 12px 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin-top: 10px;
+  padding: 12px; }
+  .twitterFooter__wrapper--item {
+    list-style: none;
+    display: inline-block;
+    margin: 2px;
+    font-size: 12px;
+    padding-right: 3px;
+    color: #8899a6; }
+    .twitterFooter__wrapper--item:hover {
+      text-decoration: underline;
+      cursor: pointer; }
+
 /*# sourceMappingURL=main.css.map */
