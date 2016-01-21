@@ -133,8 +133,6 @@ body {
   margin: 0 auto;
   padding: 70px 0;
   position: relative; }
-  .twitter img {
-    width: 72px; }
   .twitter .twitterContainer {
     padding: 0 30px; }
     .twitter .twitterContainer__main {
@@ -242,5 +240,52 @@ body {
   .twitterTrends__wrapper--item:nth-child(even) {
     color: #8899a6;
     margin-bottom: 10px; }
+
+.twitterWhoToFollow__wrapper {
+  position: relative;
+  background-color: white;
+  border-radius: 4px;
+  padding: 12px 12px 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin-top: 10px; }
+  .twitterWhoToFollow__wrapper--title {
+    color: RGBA(101, 117, 128, 1);
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 0; }
+  .twitterWhoToFollow__wrapper--list {
+    padding: 0;
+    margin: 0;
+    position: relative; }
+  .twitterWhoToFollow__wrapper--item {
+    list-style: none;
+    position: relative; }
+  .twitterWhoToFollow__wrapper--info {
+    position: absolute;
+    top: -5px;
+    left: 72px;
+    margin: 10px 0; }
+  .twitterWhoToFollow__wrapper--image {
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    margin-bottom: 30px; }
+  .twitterWhoToFollow__wrapper--name {
+    margin: 0; }
+    .twitterWhoToFollow__wrapper--name span {
+      color: #8899a6; }
+  .twitterWhoToFollow__wrapper--button {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #f5f8fa;
+    background-image: linear-gradient(#ffffff, #f5f8fa);
+    padding: 6px 18px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-weight: 900; }
+    .twitterWhoToFollow__wrapper--button .icon-user-add {
+      color: RGBA(80, 171, 241, 1);
+      font-size: 15px;
+      position: relative;
+      left: -8px; }
 
 /*# sourceMappingURL=main.css.map */

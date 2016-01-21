@@ -1,7 +1,11 @@
-h2 Who to follow
-ul
-each val in toFollow
-  li
-    img(src="#{ val.profile_image_url}", alt="image profile")
-    h5 #{ val.name } #[span @#{ val.screen_name } ]
-  li: button.icon-user-add Follow
+.twitterWhoToFollow__wrapper
+  
+  h2.twitterWhoToFollow__wrapper--title Who to follow
+  
+  each val in toFollow
+    ul.twitterWhoToFollow__wrapper--list
+      li.twitterWhoToFollow__wrapper--item
+        img(class="twitterWhoToFollow__wrapper--image", src="#{ val.profile_image_url}", alt="image profile")
+      li.twitterWhoToFollow__wrapper--item.twitterWhoToFollow__wrapper--info
+        h5.twitterWhoToFollow__wrapper--name #{ val.name } #[span @#{ val.screen_name } ]
+        button.twitterWhoToFollow__wrapper--button #[span.icon-user-add] Follow

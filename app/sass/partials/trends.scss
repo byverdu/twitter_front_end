@@ -1,10 +1,7 @@
 .twitterTrends{
   &__wrapper{
-    background-color: $whiteColorBackground;
-    border-radius: 4px;
-    padding: 12px 12px 0;
-    border: 1px solid $greyColorBorder;
-    margin-top: 10px;
+
+    @include commonWrapper();
 
     &--title {
       color: $greyColor;

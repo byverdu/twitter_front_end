@@ -6,3 +6,15 @@ $greyColorBackground: RGBA(245, 248, 250, 1);
 $whiteColorBackground: white;
 $twitterColor: RGBA(80, 171, 241, 1);
 $greyColorBorder: rgba(0,0,0,0.15);
+$white: #ffffff;
+$whiteSmoke: #f5f8fa;
+
+// mixins
+
+@mixin commonWrapper() {
+  background-color: $whiteColorBackground;
+  border-radius: 4px;
+  padding: 12px 12px 0;
+  border: 1px solid $greyColorBorder;
+  margin-top: 10px;
+}
