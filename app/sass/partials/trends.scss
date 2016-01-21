@@ -1,0 +1,41 @@
+.twitterTrends{
+  &__wrapper{
+    background-color: $whiteColorBackground;
+    border-radius: 4px;
+    padding: 12px 12px 0;
+    border: 1px solid $greyColorBorder;
+    margin-top: 10px;
+
+    &--title {
+      color: $greyColor;
+      font-size: 18px;
+      font-weight: 300;
+      margin-top: 0;
+    }
+
+    &--list {
+      list-style: none;
+      padding: 0;
+      margin: -10px 0 0 0;
+    }
+
+    &--item {
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:nth-child(odd) {
+        color: $redColor;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:nth-child(even) {
+        color: $greyColorLighter;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

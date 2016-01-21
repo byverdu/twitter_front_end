@@ -217,4 +217,30 @@ body {
       color: RGBA(101, 117, 128, 1);
       font-weight: 400; }
 
+.twitterTrends__wrapper {
+  background-color: white;
+  border-radius: 4px;
+  padding: 12px 12px 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin-top: 10px; }
+  .twitterTrends__wrapper--title {
+    color: RGBA(101, 117, 128, 1);
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 0; }
+  .twitterTrends__wrapper--list {
+    list-style: none;
+    padding: 0;
+    margin: -10px 0 0 0; }
+  .twitterTrends__wrapper--item:hover {
+    cursor: pointer; }
+  .twitterTrends__wrapper--item:nth-child(odd) {
+    color: RGBA(229, 85, 103, 1);
+    font-weight: bold; }
+    .twitterTrends__wrapper--item:nth-child(odd):hover {
+      text-decoration: underline; }
+  .twitterTrends__wrapper--item:nth-child(even) {
+    color: #8899a6;
+    margin-bottom: 10px; }
+
 /*# sourceMappingURL=main.css.map */
