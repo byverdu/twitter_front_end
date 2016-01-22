@@ -3,6 +3,10 @@
     @include commonWrapper();
     padding: 12px;
 
+    &--list {
+      margin: 0;
+    }
+
     &--item {
       list-style: none;
       display: inline-block;

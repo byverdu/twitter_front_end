@@ -1,12 +1,15 @@
 - var userUrls = ['https://twitter.com/byverdu','https://twitter.com/byverdu/following','https://twitter.com/byverdu/followers']
 .twitterProfile__header
+  // background image added dinamycly
   .twitterProfile__header--banner(style="background-image: url(#{ userStore.profile_banner_url})")
 
 .twitterProfile__body
+  
   img(class="twitterProfile__body--imageProfile", src="#{ userStore.profile_image_url}", alt="profile iamge")
+  
   .twitterProfile__body--info
-    h3.twitterProfile__body--name #{ userStore.name }
-    h5.twitterProfile__body--screenName @#{ userStore.screen_name }
+    h3.twitterProfile__body--name: a(href="#{userUrls[0]}") #{ userStore.name } #[span.twitterProfile__body--screenName @#{ userStore.screen_name }]
+  
   ul.twitterProfile__body--list
     li.twitterProfile__body--item: a(href="#{userUrls[0]}") TWEETS #[span #{ userStore.statuses_count }]
     li.twitterProfile__body--item: a(href="#{userUrls[1]}") FOLLOWING #[span #{ userStore.friends_count }]

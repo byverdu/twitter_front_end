@@ -1,0 +1,103 @@
+.twitterFeeds {
+  position: relative;
+
+  &__tweet {
+    &--userProfile {
+      width: 300px;
+      border: 1px solid $greyColorBorder;
+      border-radius: 5px;
+      background-color: $white;
+      max-height: 275px;
+      display: none;
+    }
+  }
+
+  &__userProfile {
+    position: relative;
+
+    .container {
+      padding: 0 10px 10px;
+      position: relative;
+      top: -27px;
+    }
+
+    &--banner {
+      // background image added dinamycly on jade file
+      background-size: 102%;
+      height: 95px;
+      background-position: -2px 50%;
+    }
+
+    &--list {
+      padding: 0;
+      margin: 5px 0 -5px;
+    }
+
+    &--item {
+      display: inline-block;
+      list-style: none;
+      padding: 0 10px;
+
+      &:first-child {
+        padding-left: 0;
+        padding-right: 10px;
+      }
+
+      a {
+        color: $greyColorLighter;
+        font-size: 10px;
+        letter-spacing: .02em;
+        text-decoration: none;
+
+        &:hover {
+          color: $redColor;
+        }
+      }
+
+      span {
+        color: $redColor;
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        padding-top: 3px;
+      }
+    }
+
+    &--imageProfile {
+      border-radius: 7px;
+      height: 70px;
+      width: 70px;
+      border: 3px solid $whiteColorBackground;
+      box-sizing: border-box;
+    }
+
+    &--user {
+      position: absolute;;
+      left: 90px;
+      top: 20px;
+
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        color: $greyColor;
+        font-weight: 400;
+        font-size: 13px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &--description {
+      font-size: 12px;
+    }
+  }
+}

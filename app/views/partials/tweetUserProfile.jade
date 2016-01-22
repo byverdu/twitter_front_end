@@ -1,7 +1,15 @@
-.user_description
-  img( src=tweet.profile_banner_url, alt=`background image for ${ tweet.screen_name }` )
-  p #{ tweet.description }
-  ul
-    li #{tweet.statuses_count} Tweets
-    li #{tweet.friends_count} Following
-    li #{tweet.followers_count} Followers
+- var userUrls = ['https://twitter.com/byverdu','https://twitter.com/byverdu/following','https://twitter.com/byverdu/followers']
+
+.twitterFeeds__tweet--userProfile.twitterFeeds__userProfile
+  .twitterFeeds__userProfile--banner(style="background-image: url(#{ tweet.profile_banner_url})")
+  .container
+    img(class="twitterFeeds__userProfile--imageProfile" src=tweet.profile_image_url, alt=`background image for ${ tweet.screen_name }` )
+    
+    h3.twitterFeeds__userProfile--user: a(href="#{userUrls[0]}") #{tweet.name} #[span= `@${tweet.screen_name}`]
+    
+    p.twitterFeeds__userProfile--description #{ tweet.description }
+    
+    ul.twitterFeeds__userProfile--list
+      li.twitterFeeds__userProfile--item: a(href="#{userUrls[0]}") TWEETS #[span #{ tweet.statuses_count }]
+      li.twitterFeeds__userProfile--item: a(href="#{userUrls[1]}") FOLLOWING #[span #{ tweet.friends_count }]
+      li.twitterFeeds__userProfile--item: a(href="#{userUrls[2]}") FOLLOWERS #[span #{ tweet.followers_count }]

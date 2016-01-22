@@ -76,6 +76,10 @@
       position: relative;
       top: -10px;
       left: 94px;
+
+      a {
+        text-decoration: none;
+      }
     }
 
     &--name,
@@ -86,6 +90,11 @@
     &--screenName {
       color: $greyColor;
       font-weight: 400;
+      font-size: 13px;
+      &:hover {
+        text-decoration: underline;
+        color: $redColor;
+      }
     }
   }
 }

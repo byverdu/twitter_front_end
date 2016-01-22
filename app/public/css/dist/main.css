@@ -209,11 +209,17 @@ body {
       position: relative;
       top: -10px;
       left: 94px; }
+      .twitterProfile__body--info a {
+        text-decoration: none; }
     .twitterProfile__body--name, .twitterProfile__body--screenName {
       margin: 5px 0; }
     .twitterProfile__body--screenName {
       color: RGBA(101, 117, 128, 1);
-      font-weight: 400; }
+      font-weight: 400;
+      font-size: 13px; }
+      .twitterProfile__body--screenName:hover {
+        text-decoration: underline;
+        color: RGBA(229, 85, 103, 1); }
 
 .twitterTrends__wrapper {
   background-color: white;
@@ -288,6 +294,74 @@ body {
       position: relative;
       left: -8px; }
 
+.twitterFeeds {
+  position: relative; }
+  .twitterFeeds__tweet--userProfile {
+    width: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    background-color: #ffffff;
+    max-height: 275px;
+    display: none; }
+  .twitterFeeds__userProfile {
+    position: relative; }
+    .twitterFeeds__userProfile .container {
+      padding: 0 10px 10px;
+      position: relative;
+      top: -27px; }
+    .twitterFeeds__userProfile--banner {
+      background-size: 102%;
+      height: 95px;
+      background-position: -2px 50%; }
+    .twitterFeeds__userProfile--list {
+      padding: 0;
+      margin: 5px 0 -5px; }
+    .twitterFeeds__userProfile--item {
+      display: inline-block;
+      list-style: none;
+      padding: 0 10px; }
+      .twitterFeeds__userProfile--item:first-child {
+        padding-left: 0;
+        padding-right: 10px; }
+      .twitterFeeds__userProfile--item a {
+        color: #8899a6;
+        font-size: 10px;
+        letter-spacing: .02em;
+        text-decoration: none; }
+        .twitterFeeds__userProfile--item a:hover {
+          color: RGBA(229, 85, 103, 1); }
+      .twitterFeeds__userProfile--item span {
+        color: RGBA(229, 85, 103, 1);
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        padding-top: 3px; }
+    .twitterFeeds__userProfile--imageProfile {
+      border-radius: 7px;
+      height: 70px;
+      width: 70px;
+      border: 3px solid white;
+      box-sizing: border-box; }
+    .twitterFeeds__userProfile--user {
+      position: absolute;
+      left: 90px;
+      top: 20px; }
+      .twitterFeeds__userProfile--user a {
+        text-decoration: none; }
+        .twitterFeeds__userProfile--user a:hover {
+          text-decoration: underline; }
+      .twitterFeeds__userProfile--user span {
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        color: RGBA(101, 117, 128, 1);
+        font-weight: 400;
+        font-size: 13px; }
+        .twitterFeeds__userProfile--user span:hover {
+          text-decoration: underline; }
+    .twitterFeeds__userProfile--description {
+      font-size: 12px; }
+
 .twitterFooter__wrapper {
   background-color: white;
   border-radius: 4px;
@@ -295,6 +369,8 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.15);
   margin-top: 10px;
   padding: 12px; }
+  .twitterFooter__wrapper--list {
+    margin: 0; }
   .twitterFooter__wrapper--item {
     list-style: none;
     display: inline-block;
