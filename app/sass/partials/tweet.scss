@@ -1,6 +1,14 @@
 .twitterFeeds {
   position: relative;
 
+  &__wrapper {
+    background: white;
+
+    &--tweet {
+      padding: 10px;
+    }
+  }
+
   &__tweet {
     &--userProfile {
       width: 300px;
@@ -9,6 +17,14 @@
       background-color: $white;
       max-height: 275px;
       display: none;
+    }
+
+
+    &--content {
+
+      img {
+        max-width: 500px;
+      }
     }
   }
 

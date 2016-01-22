@@ -138,7 +138,7 @@ body {
     .twitter .twitterContainer__main {
       width: 590px;
       border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 5px;
+      border-radius: 0 0 5px 5px;
       float: right; }
     .twitter .twitterContainer__aside {
       width: 290px; }
@@ -296,6 +296,10 @@ body {
 
 .twitterFeeds {
   position: relative; }
+  .twitterFeeds__wrapper {
+    background: white; }
+    .twitterFeeds__wrapper--tweet {
+      padding: 10px; }
   .twitterFeeds__tweet--userProfile {
     width: 300px;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -303,6 +307,8 @@ body {
     background-color: #ffffff;
     max-height: 275px;
     display: none; }
+  .twitterFeeds__tweet--content img {
+    max-width: 500px; }
   .twitterFeeds__userProfile {
     position: relative; }
     .twitterFeeds__userProfile .container {

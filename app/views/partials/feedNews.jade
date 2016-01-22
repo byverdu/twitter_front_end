@@ -10,7 +10,7 @@
           
       img( src=tweet.profile_image_url, alt=`image for ${ tweet.screen_name }` )
       
-      .tweet_content
+      .twitterFeeds__tweet--content
         h3 #{tweet.name} #[span= `@${tweet.screen_name}`]
         p #{tweet.text}
         if ( tweet.tweetImage !== 'no image')
