@@ -210,7 +210,8 @@ body {
       top: -10px;
       left: 94px; }
       .twitterProfile__body--info a {
-        text-decoration: none; }
+        text-decoration: none;
+        color: #000000; }
     .twitterProfile__body--name, .twitterProfile__body--screenName {
       margin: 5px 0; }
     .twitterProfile__body--screenName {
@@ -253,7 +254,8 @@ body {
   border-radius: 4px;
   padding: 12px 12px 0;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  margin-top: 10px; }
+  margin-top: 10px;
+  margin: 0; }
   .twitterWhoToFollow__wrapper--title {
     color: RGBA(101, 117, 128, 1);
     font-size: 18px;
@@ -299,7 +301,8 @@ body {
   .twitterFeeds__wrapper {
     background: white; }
     .twitterFeeds__wrapper--tweet {
-      padding: 10px; }
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
   .twitterFeeds__tweet--userProfile {
     width: 300px;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -307,6 +310,15 @@ body {
     background-color: #ffffff;
     max-height: 275px;
     display: none; }
+  .twitterFeeds__tweet--retweet .icon-retweet {
+    color: #ffffff;
+    background: RGBA(117, 179, 80, 1);
+    border-radius: 2px;
+    padding: 1px;
+    font-size: 12px; }
+  .twitterFeeds__tweet--retweetUser {
+    color: #8899a6;
+    padding-left: 10px; }
   .twitterFeeds__tweet--content img {
     max-width: 500px; }
   .twitterFeeds__userProfile {
@@ -353,7 +365,8 @@ body {
       left: 90px;
       top: 20px; }
       .twitterFeeds__userProfile--user a {
-        text-decoration: none; }
+        text-decoration: none;
+        color: #000000; }
         .twitterFeeds__userProfile--user a:hover {
           text-decoration: underline; }
       .twitterFeeds__userProfile--user span {

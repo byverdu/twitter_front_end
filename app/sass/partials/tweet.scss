@@ -6,6 +6,10 @@
 
     &--tweet {
       padding: 10px;
+      border-bottom: 1px solid $greyColorBorder;
+    }
+
+    &--content{
     }
   }
 
@@ -14,14 +18,27 @@
       width: 300px;
       border: 1px solid $greyColorBorder;
       border-radius: 5px;
-      background-color: $white;
+      background-color: $whiteColor;
       max-height: 275px;
       display: none;
     }
 
+    &--retweet {
+      .icon-retweet {
+        color: $whiteColor;
+        background: $greenColor;
+        border-radius: 2px;
+        padding: 1px;
+        font-size: 12px;
+      }
+    }
+
+    &--retweetUser {
+      color: $greyColorLighter;
+      padding-left: 10px;
+    }
 
     &--content {
-
       img {
         max-width: 500px;
       }
@@ -83,7 +100,7 @@
       border-radius: 7px;
       height: 70px;
       width: 70px;
-      border: 3px solid $whiteColorBackground;
+      border: 3px solid $whiteColorColorBackground;
       box-sizing: border-box;
     }
 
@@ -94,6 +111,7 @@
 
       a {
         text-decoration: none;
+        color: $blackColor;
         &:hover {
           text-decoration: underline;
         }

@@ -16,10 +16,10 @@
         if ( tweet.tweetImage !== 'no image')
           img(src="#{ tweet.tweetImage }", alt="image tweet")
       
-      .social_area
-        ul
-          li.icon-reply Reply
-          li.icon-retweet Retweet
-          li.icon-star Favorite
-          li ...More
+      .twitterFeeds__tweet--social.twitterFeeds__social
+        ul.twitterFeeds__social--list
+          li.twitterFeeds__social--item.icon-reply
+          li.twitterFeeds__social--item.icon-retweet
+          li.twitterFeeds__social--item.icon-star
+          li.twitterFeeds__social--item ...
     

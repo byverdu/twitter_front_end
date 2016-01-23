@@ -1,8 +1,9 @@
 .twitterWhoToFollow {
   &__wrapper {
     position: relative;
-    
+
     @include commonWrapper();
+    margin: 0;
 
     &--title {
       color: $greyColor;
@@ -46,8 +47,8 @@
     &--button {
 
       border: 1px solid $greyColorBorder;
-      background-color: $whiteSmoke;
-      background-image: linear-gradient($white, $whiteSmoke);
+      background-color: $whiteColorSmoke;
+      background-image: linear-gradient($whiteColor, $whiteColorSmoke);
       padding: 6px 18px;
       border-radius: 5px;
       margin-top: 5px;

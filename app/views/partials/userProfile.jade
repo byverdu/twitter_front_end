@@ -5,7 +5,7 @@
 
 .twitterProfile__body
   
-  img(class="twitterProfile__body--imageProfile", src="#{ userStore.profile_image_url}", alt="profile iamge")
+  img(class="twitterProfile__body--imageProfile", src="#{ userStore.profile_image_url}", alt="profile image")
   
   .twitterProfile__body--info
     h3.twitterProfile__body--name: a(href="#{userUrls[0]}") #{ userStore.name } #[span.twitterProfile__body--screenName @#{ userStore.screen_name }]
