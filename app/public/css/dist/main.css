@@ -420,6 +420,13 @@ body {
     .twitterFeeds__social--item:hover {
       color: RGBA(229, 85, 103, 1);
       cursor: pointer; }
+    .twitterFeeds__social--item span {
+      font: 12px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 600;
+      font-weight: 900;
+      position: relative;
+      top: -4px;
+      left: 10px; }
     .twitterFeeds__social--item + .icon-retweet:hover {
       color: RGBA(117, 179, 80, 1); }
     .twitterFeeds__social--item:last-child {

@@ -19,7 +19,10 @@ each tweet in secondTweetStore
       .twitterFeeds__social
         ul.twitterFeeds__social--list
           li.twitterFeeds__social--item.icon-reply
-          li.twitterFeeds__social--item.icon-retweet
+          if ( tweet.tweet_count > 0 )
+            li.twitterFeeds__social--item.icon-retweet:  span #{ tweet.tweet_count }
+          else
+            li.twitterFeeds__social--item.icon-retweet
           li.twitterFeeds__social--item.icon-star
           li.twitterFeeds__social--item ...
     

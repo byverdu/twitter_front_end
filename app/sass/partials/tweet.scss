@@ -184,6 +184,15 @@
         cursor: pointer;
       }
 
+      span {
+        font: 12px "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 600;
+        font-weight: 900;
+        position: relative;
+        top: -4px;
+        left: 10px;
+      }
+
       & + .icon-retweet {
         &:hover {
           color: $greenColor;

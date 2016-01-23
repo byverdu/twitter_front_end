@@ -111,7 +111,9 @@ Helper.prototype.buildTweetObject = function( tweet ) {
     profile_banner_url: backgroundImage,
     followers_count: convert4digitNumber( tweet.user.followers_count ),
     friends_count: convert4digitNumber( tweet.user.friends_count ),
-    statuses_count: convert4digitNumber( tweet.user.statuses_count )
+    statuses_count: convert4digitNumber( tweet.user.statuses_count ),
+    favorite_count: tweet.favorite_count,
+    tweet_count: tweet.retweet_count
   };
 };
 
@@ -140,8 +142,9 @@ Helper.prototype.buildRetweetedObject = function( tweet ) {
     profile_image_url: tweet.retweeted_status.user.profile_image_url,
     followers_count: convert4digitNumber( tweet.retweeted_status.user.followers_count ),
     friends_count: convert4digitNumber( tweet.retweeted_status.user.friends_count ),
-    statuses_count: convert4digitNumber( tweet.retweeted_status.user.statuses_count )
-
+    statuses_count: convert4digitNumber( tweet.retweeted_status.user.statuses_count ),
+    favorite_count: tweet.retweeted_status.favorite_count,
+    tweet_count: tweet.retweeted_status.retweet_count
   };
 };
 
