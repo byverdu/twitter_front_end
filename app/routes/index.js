@@ -5,10 +5,12 @@ const router = express.Router();
 let storage = require( '../config/storage' );
 
 // initial call to twitter API
-// require( '../config/twitter' )();
+require( '../config/twitter' )();
 
 
 router.get( '/', ( request, response ) => {
+
+  require( '../config/twitter' )();
 
   let initialTweetStore = storage.getItem( 'initialTweetStore' );
   let userStore = storage.getItem( 'userStore' );

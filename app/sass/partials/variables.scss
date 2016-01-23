@@ -3,7 +3,7 @@ $redColor: RGBA(229, 85, 103, 1);
 $greyColor: RGBA(101, 117, 128, 1);
 $greyColorLighter: #8899a6;
 $greyColorBackground: RGBA(245, 248, 250, 1);
-$whiteColorColorBackground: white;
+$whiteColorBackground: white;
 $twitterColor: RGBA(80, 171, 241, 1);
 $greyColorBorder: rgba(0,0,0,0.15);
 $whiteColor: #ffffff;
@@ -15,7 +15,7 @@ $greenColor: RGBA(117, 179, 80, 1);
 // mixins
 
 @mixin commonWrapper() {
-  background-color: $whiteColorColorBackground;
+  background-color: $whiteColorBackground;
   border-radius: 4px;
   padding: 12px 12px 0;
   border: 1px solid $greyColorBorder;

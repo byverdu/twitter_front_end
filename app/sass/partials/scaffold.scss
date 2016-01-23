@@ -33,6 +33,7 @@ body {
         }
         &--right {
           // border: 1px solid $greyColorBorder;
+          margin-top: 10px;
         }
       }
   }
@@ -59,6 +60,7 @@ body {
           order: -1;
         }
         &--right {
+          margin-top: 0;
         }
       }
     }

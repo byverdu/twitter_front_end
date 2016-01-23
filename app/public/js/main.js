@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
           {
               if(html)
               {
-                  $("#postswrapper").append(html);
+                  $("#secondBatchTweets").append(html);
                   $('div#loadmoreajaxloader').hide();
               }else
               {

@@ -25,7 +25,7 @@ module.exports = () => {
     helper.buildToFollow( tweetStore, toFollowRandom, toFollowStore);
 
     // Setting stores to save
-    storage.setItem( 'initialTweetStore', tweetStore.splice( 0, 10 ) );
+    storage.setItem( 'initialTweetStore', tweetStore.splice( 0, 15 ) );
     storage.setItem( 'secondTweetStore',  tweetStore );
     storage.setItem( 'toFollowStore',  toFollowStore );
   });

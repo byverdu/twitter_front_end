@@ -2,7 +2,7 @@
 
 .twitterProfile {
 
-  background-color: $whiteColorColorBackground;
+  background-color: $whiteColorBackground;
   border-radius: 4px;
 
   &__header {
@@ -64,7 +64,7 @@
       border-radius: 7px;
       height: 72px;
       width: 72px;
-      border: 3px solid $whiteColorColorBackground;
+      border: 3px solid $whiteColorBackground;
       box-sizing: border-box;
       position: absolute;
       top: -30px;

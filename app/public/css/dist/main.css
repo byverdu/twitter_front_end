@@ -142,6 +142,8 @@ body {
       float: right; }
     .twitter .twitterContainer__aside {
       width: 290px; }
+      .twitter .twitterContainer__aside--right {
+        margin-top: 10px; }
 
 @media only screen and (min-width: 1250px) {
   .twitter {
@@ -155,7 +157,9 @@ body {
         float: none;
         margin: 0 10px; }
       .twitter .twitterContainer__aside--left {
-        order: -1; } }
+        order: -1; }
+      .twitter .twitterContainer__aside--right {
+        margin-top: 0; } }
 .twitterProfile {
   background-color: white;
   border-radius: 4px; }
@@ -298,31 +302,33 @@ body {
 
 .twitterFeeds {
   position: relative; }
-  .twitterFeeds__wrapper {
-    background: white; }
-    .twitterFeeds__wrapper--tweet {
-      padding: 10px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
-  .twitterFeeds__tweet--userProfile {
+  .twitterFeeds__tweet {
+    background: white;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+    .twitterFeeds__tweet:hover {
+      background: RGBA(245, 248, 250, 1); }
+    .twitterFeeds__tweet--retweet {
+      margin-bottom: 10px;
+      position: relative;
+      left: 35px; }
+      .twitterFeeds__tweet--retweet .icon-retweet {
+        color: #ffffff;
+        background: RGBA(117, 179, 80, 1);
+        border-radius: 2px;
+        padding: 1px;
+        font-size: 12px; }
+    .twitterFeeds__tweet--retweetUser {
+      color: #8899a6;
+      padding-left: 10px; }
+  .twitterFeeds__userProfile {
+    position: relative;
     width: 300px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     background-color: #ffffff;
     max-height: 275px;
     display: none; }
-  .twitterFeeds__tweet--retweet .icon-retweet {
-    color: #ffffff;
-    background: RGBA(117, 179, 80, 1);
-    border-radius: 2px;
-    padding: 1px;
-    font-size: 12px; }
-  .twitterFeeds__tweet--retweetUser {
-    color: #8899a6;
-    padding-left: 10px; }
-  .twitterFeeds__tweet--content img {
-    max-width: 500px; }
-  .twitterFeeds__userProfile {
-    position: relative; }
     .twitterFeeds__userProfile .container {
       padding: 0 10px 10px;
       position: relative;
@@ -380,7 +386,51 @@ body {
           text-decoration: underline; }
     .twitterFeeds__userProfile--description {
       font-size: 12px; }
+  .twitterFeeds__content--imgProfile {
+    border-radius: 6px; }
+  .twitterFeeds__content--float {
+    float: right;
+    width: 90%;
+    padding-left: 5px; }
+  .twitterFeeds__content--userName {
+    margin: 0 0 5px;
+    font-size: 13px; }
+    .twitterFeeds__content--userName span {
+      font-size: 12px;
+      color: #8899a6; }
+  .twitterFeeds__content--tweetText {
+    margin-top: 0; }
+  .twitterFeeds__content--image img {
+    width: 512px;
+    position: relative;
+    left: 57px;
+    max-height: 450px;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: 50% 0; }
+  .twitterFeeds__social--list {
+    margin: 10px 0 0;
+    padding-left: 60px; }
+  .twitterFeeds__social--item {
+    list-style: none;
+    display: inline-block;
+    padding-right: 60px;
+    font-size: 18px;
+    color: #8899a6; }
+    .twitterFeeds__social--item:hover {
+      color: RGBA(229, 85, 103, 1);
+      cursor: pointer; }
+    .twitterFeeds__social--item + .icon-retweet:hover {
+      color: RGBA(117, 179, 80, 1); }
+    .twitterFeeds__social--item:last-child {
+      position: relative;
+      top: -5px; }
 
+@media only screen and (min-width: 1250px) {
+  .twitterFeeds__content--image img {
+    width: 460px; }
+  .twitterFeeds__content--float {
+    width: 85%; } }
 .twitterFooter__wrapper {
   background-color: white;
   border-radius: 4px;

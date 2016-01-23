@@ -9,7 +9,7 @@ module.exports = {
 
   // API queries values
   tweetUrlAPI: 'statuses/home_timeline',
-  tweetQueryAPI: { q: 'byverdu', count: 25 },
+  tweetQueryAPI: { q: 'byverdu', count: 85 },
   userUrlAPI: 'users/show',
   userQueryAPI: { screen_name: 'byverdu' }
 };
