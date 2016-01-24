@@ -117,6 +117,11 @@
           border-radius: 2px;
         }
       }
+
+      a {
+        color: $whiteColor;
+        text-decoration: none;
+      }
     }
 
     &--searchInput {
@@ -132,7 +137,7 @@
       .icon-search {
         position: absolute;
         right: 15px;
-        color: $greyColor;
+        color: $greyColorLighter;
       }
     }
 

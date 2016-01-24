@@ -1,13 +1,23 @@
 // global variables
+
+// red colors
 $redColor: RGBA(229, 85, 103, 1);
+$redColorBorder: RGBA(229, 85, 103, 0.4);
+$redColorBackground: RGBA(229, 85, 103, 0.1);
+
+// grey colors
 $greyColor: RGBA(101, 117, 128, 1);
 $greyColorLighter: #8899a6;
 $greyColorBackground: RGBA(245, 248, 250, 1);
+$greyColorBorder: rgba(0,0,0,0.15);
+
+// white colors
 $whiteColorBackground: white;
 $twitterColor: RGBA(80, 171, 241, 1);
-$greyColorBorder: rgba(0,0,0,0.15);
 $whiteColor: #ffffff;
 $whiteColorSmoke: #f5f8fa;
+
+// other colors
 $blackColor: #000000;
 $greenColor: RGBA(117, 179, 80, 1);
 

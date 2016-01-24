@@ -1,0 +1,151 @@
+.twitterNewTweet {
+  border-radius: 5px 5px 0 0;
+  border: 1px solid $redColorBorder;
+  background-color: $whiteColor;
+  background-color: $whiteColor;
+
+  &__wrapper {
+    background-color: $redColorBackground;
+    padding: 10px;
+
+    &--input{
+      position: relative;
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 5px;
+        position: absolute;
+        top: 4px;
+        left: 15px;
+      }
+
+      textarea {
+        border: 1px solid $redColorBorder;
+        border-radius: 5px;
+        resize: none;
+        width: 505px;
+        height: 35px;
+        position: relative;
+        left: 58px;
+        padding: 0;
+
+        &:focus {
+          height: 80px;
+          outline: none;
+        }
+      }
+
+    }
+    &--body {
+      width: 500px;
+      margin-left: 59px;
+      display: none;
+    }
+
+    &--list {
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    &--listSecond {
+      float: right;
+      position: relative;
+      top: -36px;
+      right: -23px;
+      margin: 0;
+
+      span:not(.icon-quill) {
+        top: -2px;
+      }
+      span.icon-quill {
+        top: 0;
+        font-family: 'icomoon';
+        font-size: 18px;
+        position: relative;
+        right: 5px;
+      }
+
+      li:first-child {
+        font-size: 14px;
+        color: $greyColorLighter;
+      }
+
+      li:last-child {
+        &::before {
+          content: '';
+          position: absolute;
+          left: 10px;
+          top: 10px;
+          width: 8px;
+          height: 6px;
+          border-top: 2px solid;
+          border-left: 2px solid;
+          border-radius: 2px;
+          color: $whiteColor;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 21px;
+          top: 18px;
+          width: 10px;
+          height: 6px;
+          border-bottom: 2px solid;
+          border-right: 2px solid;
+          border-radius: 2px;
+          color: $whiteColor;
+        }
+      }
+    }
+
+    &--item {
+      list-style: none;
+      padding-right: 17px;
+      display: inline-block;
+      font-size: 24px;
+      color: $redColor;
+      position: relative;
+
+      span {
+        font: 13px "Helvetica Neue",Helvetica,Arial,sans-serif;
+        position: relative;
+        top: -6px;
+        padding-left: 5px;
+      }
+
+      button {
+        padding: 8px 12px;
+        border-radius: 5px;
+        border: 1px solid $redColorBorder;
+        background-color: $redColor;
+        color: $whiteColor;
+        font-weight: 900;
+        opacity: 0.4;
+
+        &:enabled:hover {
+          background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.15));
+        }
+      }
+    }
+  }
+
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: $redColor;
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  @media only screen and (min-width: 1250px) {
+    .twitterNewTweet{
+
+      &__wrapper {
+        &--input{
+          textarea {
+            width: 455px;
+          }
+        }
+      }
+    }
+  }
+}

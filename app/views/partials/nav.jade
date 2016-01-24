@@ -17,5 +17,6 @@ header.twitterHeader
           span.icon-search
         li.icon-image.twitterHeader__navSettings--item.twitterHeader__navSettings--userImg: img(src="#{userStore.profile_image_url}", alt="user image for #{userStore.name}")
         li.twitterHeader__navSettings--item 
-          span.icon-quill 
-          span.twitterHeader__navSettings--quillText Tweet
+          a(href="#twitterModal", rel="modal:open")
+            span.icon-quill 
+            span.twitterHeader__navSettings--quillText Tweet

@@ -1,0 +1,23 @@
+#twitterModal.twitterModal
+  .twitterModal__wrapper
+    
+    .twitterModal__wrapper--header
+      h3 Compose new Tweet
+      a(href="#" rel="modal:close") x
+    
+    .twitterModal__wrapper--body
+      textarea(placeholder="What's happening?")
+    
+    .twitterModal__wrapper--footer
+      ul.twitterModal__wrapper--list
+        li.twitterModal__wrapper--item.icon-camera: span Media
+        li.twitterModal__wrapper--item.icon-location: span Location
+      
+      ul.twitterModal__wrapper--list.twitterModal__wrapper--listSecond
+        li.twitterModal__wrapper--item 140
+        li.twitterModal__wrapper--item: button(disabled)
+          span.icon-quill
+          span Tweet 
+    
+    
+    

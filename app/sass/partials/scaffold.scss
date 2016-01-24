@@ -12,7 +12,7 @@ body {
 .twitter{
   width: 950px;
   margin: 0 auto;
-  padding: 70px 0;
+  padding: 60px 0;
   position: relative;
 
   .twitterContainer {
@@ -21,7 +21,8 @@ body {
       &__main {
         width: 590px;
         border: 1px solid $greyColorBorder;
-        border-radius: 0 0 5px 5px;
+        border-top-color: $redColorBorder;
+        border-radius: 5px 5px 0 0;
         float: right;
       }
 

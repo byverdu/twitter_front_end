@@ -3,10 +3,14 @@ extends ./partials/layout
 block content
   include ./partials/nav
   
+  include ./partials/modalTweet
+  
   .twitter  
     section.twitterContainer 
       
       section.twitterContainer__main   
+        .twitterNewTweet
+          include ./partials/postTweet
         .twitterFeeds  
           include ./partials/feedNews
       

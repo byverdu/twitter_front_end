@@ -145,7 +145,7 @@
     center: function() {
       this.$elm.css({
         position: 'fixed',
-        top: "50%",
+        top: "35%",
         left: "50%",
         marginTop: - (this.$elm.outerHeight() / 2),
         marginLeft: - (this.$elm.outerWidth() / 2),
@@ -192,7 +192,7 @@
     modalClass: "modal",
     spinnerHtml: null,
     showSpinner: true,
-    showClose: true,
+    showClose: false,
     fadeDuration: null,   // Number of milliseconds the fade animation takes.
     fadeDelay: 1.0        // Point during the overlay's fade-in that the modal begins to fade in (.5 = 50%, 1.5 = 150%, etc.)
   };
