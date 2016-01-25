@@ -4,7 +4,9 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
   console.log('DOMContentLoaded event fired');
 
-  // global variables
+  /**
+   * infinite scrolling
+   **/
 
   // http response text from server
   function requestListenerData () {
@@ -35,6 +37,25 @@ document.addEventListener( 'DOMContentLoaded', () => {
       doHttpRequest( );
     }
   }
+
+  /**
+   * Textarea count
+   **/
+  let textarea = Array.from(document.querySelectorAll('.textareaCount'));
+
+  function getTweetWordCount () {
+
+    let maxCount = 140;
+
+    console.log(this.value.length);
+  }
+
+  textarea.forEach( (el) => {
+    el.addEventListener( 'keyup', getTweetWordCount );
+  });
+
+
+  // Adding event listeners to elements
 
   document.addEventListener( 'scroll', loadInfiniteScroll );
 
