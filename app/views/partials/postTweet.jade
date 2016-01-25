@@ -1,16 +1,16 @@
 .twitterNewTweet__wrapper
   .twitterNewTweet__wrapper--input
     img(src="#{userStore.profile_image_url}", alt="")
-    textarea(class="textareaCount",placeholder="What's happening?")
+    textarea(class="textareaSection-js",placeholder="What's happening?")
   
-  .twitterNewTweet__wrapper--body
+  .twitterNewTweet__wrapper--body.hide
     ul.twitterNewTweet__wrapper--list
       li.twitterNewTweet__wrapper--item.icon-camera: span Media
       li.twitterNewTweet__wrapper--item.icon-location: span Location
     
     ul.twitterNewTweet__wrapper--list.twitterNewTweet__wrapper--listSecond
-      li.twitterNewTweet__wrapper--item 140
-      li.twitterNewTweet__wrapper--item: button(disabled)
+      li.twitterNewTweet__wrapper--item: span.textareaCount-js 140
+      li.twitterNewTweet__wrapper--item: button.textareaButton-js(disabled)
         span.icon-quill
         span Tweet 
   
