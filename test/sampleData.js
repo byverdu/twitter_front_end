@@ -291,7 +291,11 @@ let sliceTweetText = ( tweet ) => {
 
 let splitTweetText = ( tweet, pattern ) => {
     return tweet.split( pattern ).pop();
-  };
+};
+
+let splitConcatString = ( tweetText, pattern) => {
+  return tweetText;
+};
 
   return {
     tweet0: tweet0,
@@ -300,6 +304,7 @@ let splitTweetText = ( tweet, pattern ) => {
     getRandomValues:getRandomValues,
     isRetweeted: isRetweeted,
     hasTweetImage: hasTweetImage,
-    splitTweetText: splitTweetText
+    splitTweetText: splitTweetText,
+    splitConcatString: splitConcatString,
   };
 };

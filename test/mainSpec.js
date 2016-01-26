@@ -223,4 +223,17 @@ describe('prehelper functions', () =>{
     });
   });
 
+  describe('splitConcatString', () => {
+    it('is defined', () => {
+      expect( sampleData.splitConcatString ).not.eq( undefined );
+    });
+
+    it('Will only modify strings with @mentions', () => {
+      let tweet0 = sampleData.tweet0.text;
+      let tweet1 = sampleData.tweet1.text;
+      let pattern = '@';
+      expect( sampleData.splitConcatString( tweet0, pattern ) ).not.to.include( '@' );
+    });
+  });
+
 });
