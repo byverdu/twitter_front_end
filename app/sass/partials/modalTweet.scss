@@ -1,7 +1,7 @@
 .twitterModal {
   display: none;
   width: 520px;
-  height: 195px;
+  height: 214px;
   background: $whiteColor;
   border-radius: 8px;
 
@@ -40,9 +40,9 @@
         border: 1px solid $redColorBorder;
         border-radius: 5px;
         resize: none;
-        width: 490px;
+        width: 470px;
         height: 75px;
-        padding: 0;
+        padding: 10px;
 
         &:focus {
           outline: none;
@@ -146,7 +146,7 @@
     }
   }
 
-  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-      padding: 10px;
-  }
+  // ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  //     padding: 10px;
+  // }
 }
