@@ -8,6 +8,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
   let textArea;
   let textAreaBodyIndex;
   let hidedButtons;
+  let tweetText;
 
   /**
    * infinite scrolling
@@ -21,7 +22,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
     let referenceNode = document.querySelectorAll( '.twitterFeeds__tweet' );
     let nodeToAppend = referenceNode[referenceNode.length - 1].nextSibling;
 
-    newNode.setAttribute( 'class', 'secondBatchTweets' );
+    newNode.classList.add( 'secondBatchTweets' );
     newNode.innerHTML = this.responseText ;
 
     parentNode.insertBefore( newNode, nodeToAppend );
@@ -50,7 +51,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
   /**
    * Textarea tweet character count
    **/
-  textArea = Array.from(document.querySelectorAll('.textareaSection-js'));
+  textArea = Array.from(document.querySelectorAll( '.textareaSection-js' ));
 
   function getTweetWordCount () {
 
@@ -92,7 +93,44 @@ document.addEventListener( 'DOMContentLoaded', () => {
     }
   }
 
+  // Tweet text modification to convert mentions into links
 
+  function splitConcatString( element ) {
+    let splitString = element.split( ' ' );
+    let concatString;
+
+    splitString.map( ( el, index, array ) => {
+
+      if ( el.indexOf( '@' ) !== -1 ) {
+        if ( el.length > 1) {
+          let tweetMention = array[index];
+          let spanTag = document.createElement( 'span' );
+          spanTag.classList.add( 'tweetMention' );
+          spanTag.innerText = tweetMention;
+          array[index] = spanTag.outerHTML;
+          concatString = array;
+        }
+      }
+    });
+    return concatString.join( ' ' );
+  }
+
+  function test() {
+
+    tweetText = Array.from( document.querySelectorAll( '.tweetText-js' ) );
+
+    tweetText.forEach( ( outerEl, outerInd, outerArr ) => {
+      let element = outerEl.innerHTML;
+
+      if ( element.indexOf( '@' ) !== -1) {
+        outerEl.innerHTML = splitConcatString( element );
+      }
+      return outerArr;
+    });
+  }
+
+
+  test();
   // Adding event listeners to elements
 
   textArea.forEach( (el) => {
