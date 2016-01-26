@@ -293,6 +293,8 @@ let splitConcatString = ( tweetText ) => {
   let splitString = tweetText.split( ' ' );
   let concatString;
 
+  console.log(splitString);
+
   splitString.map( ( el, index, array ) => {
 
     if ( el.indexOf( '@' ) !== -1 ) {
@@ -301,6 +303,10 @@ let splitConcatString = ( tweetText ) => {
         array[index] = `<span class="tweetMention">${ tweetMention }</span>`;
         concatString = array;
       }
+    } else if ( el.indexOf( 'https://') !== -1 ) {
+      let tweetMention = array[index];
+      array[index] = `<a href=${tweetMention} class="tweetMention">${ tweetMention }</a>`;
+      concatString = array;
     }
   });
   if ( typeof concatString !== 'undefined' ) {

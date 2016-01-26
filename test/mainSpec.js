@@ -237,6 +237,11 @@ describe('prehelper functions', () =>{
       let tweet = sampleData.tweet0.text;
       expect( sampleData.splitConcatString( tweet ) ).not.to.include( '<span class="tweetMention">' );
     });
+
+    it('tweets with "https" are converted to anchor tags', () => {
+      let tweet = sampleData.tweet0.text;
+      expect( sampleData.splitConcatString( tweet ) ).to.include( '<a href=https://t.co/Kpr2A6ZwVI class="tweetMention">' );
+    });
   });
 
 });

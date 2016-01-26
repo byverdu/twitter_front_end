@@ -9,9 +9,16 @@ body {
   margin: 0;
 }
 
-.textareaCountRed,
+.textareaCountRed {
+	color: $redColor;
+}
 .tweetMention {
 	color: $redColor;
+	text-decoration: none;
+}
+
+.tweetMention:hover {
+	text-decoration: underline;
 }
 
 .hide {

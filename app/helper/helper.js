@@ -83,7 +83,7 @@ function convert4digitNumber( number ) {
 }
 
  /**
-  * splitConcatString - splits and concats string contains "@"
+  * splitConcatString - splits and concats string contains "@" or "https://"
   *
   * @param  {string} tweetText - every text on tweet
   * @return {string}  modified string if contains "@", otherwise the same string
@@ -100,6 +100,10 @@ function splitConcatString( tweetText) {
         array[index] = `<span class="tweetMention">${ tweetMention }</span>`;
         concatString = array;
       }
+    } else if ( el.indexOf( 'https://') !== -1 ) {
+      let tweetMention = array[index];
+      array[index] = `<a href=${tweetMention} class="tweetMention">${ tweetMention }</a>`;
+      concatString = array;
     }
   });
   if ( typeof concatString !== 'undefined' ) {
