@@ -39,11 +39,12 @@ document.addEventListener( 'DOMContentLoaded', () => {
   // Loading infinite scroll
   function loadInfiniteScroll () {
     let bodyElement = document.querySelector('body');
-    let allTweets = document.querySelectorAll( '.twitterFeeds__tweet' );
+    let bodyHeight = bodyElement.clientHeight;
     let bodyScrollTop = bodyElement.scrollTop;
-    let lasTweetHeight = allTweets[ allTweets.length - 1 ].clientHeight;
+    let windowHeight = window.innerHeight;
+    let checkHeight = ( bodyHeight - windowHeight ) === bodyScrollTop; 
 
-    if ( bodyScrollTop >= lasTweetHeight && bodyScrollTop <= (lasTweetHeight + 100) ) {
+    if ( checkHeight ) {
       doHttpRequest();
     }
   }
