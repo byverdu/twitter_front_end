@@ -285,16 +285,29 @@ let hasTweetImage = ( tweet ) => {
   return 'no image';
 };
 
-let sliceTweetText = ( tweet ) => {
-  return tweet.split( /RT @.*\:/ ).pop();
-};
-
 let splitTweetText = ( tweet, pattern ) => {
     return tweet.split( pattern ).pop();
 };
 
-let splitConcatString = ( tweetText, pattern) => {
-  return tweetText;
+let splitConcatString = ( tweetText ) => {
+  let splitString = tweetText.split( ' ' );
+  let concatString;
+
+  splitString.map( ( el, index, array ) => {
+
+    if ( el.indexOf( '@' ) !== -1 ) {
+      if ( el.length > 1) {
+        let tweetMention = array[index];
+        array[index] = `<span class="tweetMention">${ tweetMention }</span>`;
+        concatString = array;
+      }
+    }
+  });
+  if ( typeof concatString !== 'undefined' ) {
+    return concatString.join( ' ' );
+  } else {
+    return splitString.join( ' ' );
+  }
 };
 
   return {

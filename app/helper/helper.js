@@ -82,6 +82,33 @@ function convert4digitNumber( number ) {
   return resultString;
 }
 
+ /**
+  * splitConcatString - splits and concats string contains "@"
+  *
+  * @param  {string} tweetText - every text on tweet
+  * @return {string}  modified string if contains "@", otherwise the same string
+  */
+function splitConcatString( tweetText) {
+  let splitString = tweetText.split( ' ' );
+  let concatString;
+
+  splitString.map( ( el, index, array ) => {
+
+    if ( el.indexOf( '@' ) !== -1 ) {
+      if ( el.length > 1) {
+        let tweetMention = array[index];
+        array[index] = `<span class="tweetMention">${ tweetMention }</span>`;
+        concatString = array;
+      }
+    }
+  });
+  if ( typeof concatString !== 'undefined' ) {
+    return concatString.join( ' ' );
+  } else {
+    return splitString.join( ' ' );
+  }
+}
+
 /**
  * @class
  *
@@ -102,7 +129,7 @@ Helper.prototype.buildTweetObject = function( tweet ) {
 
   return {
     retweet: false,
-    text: tweet.text,
+    text: splitConcatString( tweet.text ),
     tweetImage: hasTweetImage( tweet ),
     name: tweet.user.name,
     description: tweet.user.description,
@@ -130,13 +157,14 @@ Helper.prototype.buildRetweetedObject = function( tweet ) {
 
   let backgroundImage = tweet.retweeted_status.user.profile_banner_url || 'images/defaultBackground.jpg';
   let splitPattern = /RT @.*\: /;
+  let textMention = splitTweetText( tweet.text, splitPattern);
 
   return {
     retweet: true,
     whoRetweeted: tweet.user.name,
     name: tweet.retweeted_status.user.name,
     screen_name: tweet.retweeted_status.user.screen_name,
-    text: splitTweetText( tweet.text, splitPattern),
+    text: splitConcatString( textMention ),
     tweetImage: hasTweetImage( tweet ),
     profile_banner_url: backgroundImage,
     profile_image_url: tweet.retweeted_status.user.profile_image_url,

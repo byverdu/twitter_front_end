@@ -2,7 +2,6 @@
 
 import chai from 'chai';
 import Helper from '../app/helper/helper';
-// let = require('../app/helper/prehelper')();
 let sampleData = require( './sampleData' )();
 let helper = new Helper();
 let expect = chai.expect;
@@ -229,10 +228,14 @@ describe('prehelper functions', () =>{
     });
 
     it('Will only modify strings with @mentions', () => {
-      let tweet0 = sampleData.tweet0.text;
-      let tweet1 = sampleData.tweet1.text;
-      let pattern = '@';
-      expect( sampleData.splitConcatString( tweet0, pattern ) ).not.to.include( '@' );
+      let pattern = /RT @.*\: /;
+      let tweet = sampleData.splitTweetText( sampleData.tweet1.text, pattern );
+      expect( sampleData.splitConcatString( tweet ) ).to.include( '<span class="tweetMention">' );
+    });
+
+    it('tweets without @mentions remains equal', () => {
+      let tweet = sampleData.tweet0.text;
+      expect( sampleData.splitConcatString( tweet ) ).not.to.include( '<span class="tweetMention">' );
     });
   });
 

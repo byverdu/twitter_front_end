@@ -42,7 +42,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
     let bodyHeight = bodyElement.clientHeight;
     let bodyScrollTop = bodyElement.scrollTop;
     let windowHeight = window.innerHeight;
-    let checkHeight = ( bodyHeight - windowHeight ) === bodyScrollTop; 
+    let checkHeight = ( bodyHeight - windowHeight ) === bodyScrollTop;
 
     if ( checkHeight ) {
       doHttpRequest();
@@ -94,44 +94,6 @@ document.addEventListener( 'DOMContentLoaded', () => {
     }
   }
 
-  // Tweet text modification to convert mentions into links
-
-  function splitConcatString( element ) {
-    let splitString = element.split( ' ' );
-    let concatString;
-
-    splitString.map( ( el, index, array ) => {
-
-      if ( el.indexOf( '@' ) !== -1 ) {
-        if ( el.length > 1) {
-          let tweetMention = array[index];
-          let spanTag = document.createElement( 'span' );
-          spanTag.classList.add( 'tweetMention' );
-          spanTag.innerText = tweetMention;
-          array[index] = spanTag.outerHTML;
-          concatString = array;
-        }
-      }
-    });
-    return concatString.join( ' ' );
-  }
-
-  function test() {
-
-    tweetText = Array.from( document.querySelectorAll( '.tweetText-js' ) );
-
-    tweetText.forEach( ( outerEl, outerInd, outerArr ) => {
-      let element = outerEl.innerHTML;
-
-      if ( element.indexOf( '@' ) !== -1) {
-        outerEl.innerHTML = splitConcatString( element );
-      }
-      return outerArr;
-    });
-  }
-
-
-  test();
   // Adding event listeners to elements
 
   textArea.forEach( (el) => {
