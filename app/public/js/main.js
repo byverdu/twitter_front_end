@@ -26,6 +26,13 @@ document.addEventListener( 'DOMContentLoaded', () => {
     newNode.innerHTML = this.responseText ;
 
     parentNode.insertBefore( newNode, nodeToAppend );
+
+    Array.from( document.querySelectorAll('.displayProfile-js') ).forEach( (outerEl) => {
+
+      outerEl.addEventListener( 'mouseover', displayProfile );
+
+      outerEl.addEventListener( 'mouseout', hideProfile);
+    });
   }
 
   // XMLHttpRequest to fetch second batch of data.
@@ -96,6 +103,25 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
   // displaying user tweet profile's user
 
+  function displayProfile() {
+    let actualParentNode = this.parentNode.parentNode.parentNode;
+    let profile = actualParentNode.querySelector('.profileToDisplay-js');
+    let isRetweet =  actualParentNode.querySelector('.twitterFeeds__tweet--retweet');
+
+    if (isRetweet !== null) {
+      profile.style.top = '95px';
+    }
+
+    profile.classList.remove( 'hide' );
+  }
+
+  function hideProfile() {
+    let actualParentNode = this.parentNode.parentNode.parentNode;
+    let profile = actualParentNode.querySelector('.profileToDisplay-js');
+
+    profile.classList.add( 'hide' );
+  }
+
 
   // Adding event listeners to elements
 
@@ -111,24 +137,9 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
   Array.from( document.querySelectorAll('.displayProfile-js') ).forEach( (outerEl) => {
 
-    outerEl.addEventListener( 'mouseover', function() {
-      let actualParentNode = this.parentNode.parentNode.parentNode;
-      let profile = actualParentNode.querySelector('.profileToDisplay-js');
-      let isRetweet =  actualParentNode.querySelector('.twitterFeeds__tweet--retweet');
+    outerEl.addEventListener( 'mouseover', displayProfile );
 
-      if (isRetweet !== null) {
-        profile.style.top = '95px';
-      }
-
-      profile.classList.remove( 'hide' );
-    });
-
-    outerEl.addEventListener( 'mouseout', function() {
-      let actualParentNode = this.parentNode.parentNode.parentNode;
-      let profile = actualParentNode.querySelector('.profileToDisplay-js');
-
-      profile.classList.add( 'hide' );
-    });
+    outerEl.addEventListener( 'mouseout', hideProfile );
   });
 
 });

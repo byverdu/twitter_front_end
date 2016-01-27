@@ -21,11 +21,11 @@ The project can be viewed visiting [Twitter.byverdu.es](http://twitter.byverdu.e
 
 #### Twitter.com
 
-![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/app/public/real.jpg)
+![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/app/public/images/real.png)
 
 #### Twitter.byverdu.es
 
-![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/app/public/mine.jpg)
+![twitter.com](https://github.com/byverdu/twitter_front_end/blob/master/app/public/images/mine.png)
 
 #### Project structure
 ```
