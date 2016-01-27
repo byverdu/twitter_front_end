@@ -8,10 +8,11 @@ each tweet in initialTweetStore
       
         
     .twitterFeeds__content
-      img(class="twitterFeeds__content--imgProfile", src=tweet.profile_image_url, alt=`image for ${ tweet.screen_name }` )
+      .twitterFeeds__content--imgProfile 
+        img(class="displayProfile-js", src=tweet.profile_image_url, alt=`image for ${ tweet.screen_name }` )
       .twitterFeeds__content--float
-        h3.twitterFeeds__content--userName #{tweet.name} #[span= `@${tweet.screen_name}`]
-        p.twitterFeeds__content--tweetText.tweetText-js !{tweet.text}
+        h3.twitterFeeds__content--userName.displayProfile-js #{tweet.name} #[span= `@${tweet.screen_name}`]
+        p.twitterFeeds__content--tweetText !{tweet.text}
     .twitterFeeds__content--image
       if ( tweet.tweetImage !== 'no image')
         img(src="#{ tweet.tweetImage }", alt="image tweet")

@@ -5,6 +5,7 @@
     background: white;
     padding: 10px;
     border-bottom: 1px solid $greyColorBorder;
+    position: relative;
 
     &:hover {
       background: $greyColorBackground
@@ -32,13 +33,14 @@
 
   &__userProfile {
 
-    position: relative;
     width: 300px;
     border: 1px solid $greyColorBorder;
     border-radius: 5px;
     background-color: $whiteColor;
     max-height: 275px;
-    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 70px;
 
     .container {
       padding: 0 10px 10px;
@@ -125,12 +127,27 @@
     &--description {
       font-size: 12px;
     }
+
+    &:before {
+      content: "";
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid $greyColor;
+      border-right: 8px solid transparent;
+      border-left: 8px solid transparent;
+      position: absolute;
+      top: -16px;
+      left: 15px;
+    }
   }
 
   &__content {
 
     &--imgProfile {
-      border-radius: 6px;
+      width: 48px;
+      position: absolute;
+      img {
+        border-radius: 6px;
+      }
     }
 
     &--float {
