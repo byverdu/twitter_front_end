@@ -132,6 +132,10 @@ body {
   font: 14px "Helvetica Neue",Helvetica,Arial,sans-serif;
   margin: 0; }
 
+/* Safari 9.0+ */
+_::-webkit-:not(:root:root), .twitterNewTweet .twitterNewTweet__wrapper--listSecond {
+  right: 25px !important; }
+
 .textareaCountRed {
   color: RGBA(229, 85, 103, 1); }
 

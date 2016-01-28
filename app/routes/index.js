@@ -10,7 +10,7 @@ require( '../config/twitter' )();
 
 router.get( '/', ( request, response ) => {
 
-  // require( '../config/twitter' )();
+  require( '../config/twitter' )();
 
   let initialTweetStore = storage.getItem( 'initialTweetStore' );
   let userStore = storage.getItem( 'userStore' );
