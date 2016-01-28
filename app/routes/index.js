@@ -4,13 +4,15 @@ const express = require( 'express' );
 const router = express.Router();
 let storage = require( '../config/storage' );
 
-// initial call to twitter API
-require( '../config/twitter' )();
+// calling to twitter API
+
+setInterval( () => {
+  console.log('calling API');
+  require( '../config/twitter' )();
+}, 18000000);
 
 
 router.get( '/', ( request, response ) => {
-
-  require( '../config/twitter' )();
 
   let initialTweetStore = storage.getItem( 'initialTweetStore' );
   let userStore = storage.getItem( 'userStore' );
