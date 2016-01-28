@@ -1,7 +1,7 @@
 each tweet in initialTweetStore
   .twitterFeeds__tweet
     if( tweet.retweet === true )
-      .twitterFeeds__tweet--retweet
+      .twitterFeeds__tweet--retweet.retweet-js
         span.icon-retweet
         span.twitterFeeds__tweet--retweetUser #{ tweet.whoRetweeted } retweeted
     include __tweetUserProfile

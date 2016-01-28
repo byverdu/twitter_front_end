@@ -1,9 +1,9 @@
 .twitterNewTweet__wrapper
   .twitterNewTweet__wrapper--input
     img(src="#{userStore.profile_image_url}", alt="")
-    textarea(class="textareaSection-js",placeholder="What's happening?")
+    textarea(class="textareaElement-js textarea-js",placeholder="What's happening?")
   
-  .twitterNewTweet__wrapper--body.hide
+  .twitterNewTweet__wrapper--body.hide.textareaSection-js
     ul.twitterNewTweet__wrapper--list
       li.twitterNewTweet__wrapper--item.icon-camera: span Media
       li.twitterNewTweet__wrapper--item.icon-location: span Location

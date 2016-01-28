@@ -24,6 +24,9 @@
 <dd><p>convert4digitNumber - converts a number with 4 or more digits into a custom
                       string representation</p>
 </dd>
+<dt><a href="#splitConcatString">splitConcatString(tweetText)</a> ⇒ <code>string</code></dt>
+<dd><p>splitConcatString - splits and concats string contains &quot;@&quot; or &quot;https://&quot;</p>
+</dd>
 </dl>
 
 <a name="Helper"></a>
@@ -86,10 +89,10 @@ Helper.prototype.arrayRandomValues - fills an array with 3 different random valu
 
 <a name="Helper+whichObjectBuild"></a>
 ### helper.whichObjectBuild(tweetMethod, retweetMethod, tweet) ⇒ <code>object</code>
-Helper.prototype.whichObjectBuild - description
+Helper.prototype.whichObjectBuild - creates objects depending a certain condition
 
 **Kind**: instance method of <code>[Helper](#Helper)</code>  
-**Returns**: <code>object</code> - description  
+**Returns**: <code>object</code> - - objecT with API values depending if is retweet or not  
 **See**
 
 - tweetMethod() => [Helper](#Helper).buildRetweetedObject
@@ -98,9 +101,9 @@ Helper.prototype.whichObjectBuild - description
 
 | Param | Type | Description |
 | --- | --- | --- |
-| tweetMethod | <code>function</code> | description |
-| retweetMethod | <code>function</code> | description |
-| tweet | <code>object</code> | description |
+| tweetMethod | <code>function</code> | called when is a non-retweet |
+| retweetMethod | <code>function</code> | called when is a retweet |
+| tweet | <code>object</code> | Every single tweet from the API call |
 
 <a name="Helper+buildToFollow"></a>
 ### helper.buildToFollow(store, randomArray, finalStore) ⇒ <code>array</code>
@@ -112,7 +115,7 @@ Helper.prototype.buildToFollow - iterates an array to retrieve value depending o
 | Param | Type | Description |
 | --- | --- | --- |
 | store | <code>array</code> | result with custom objects after API call |
-| randomArray | <code>array</code> | random values from the store length |
+| randomArray | <code>array</code> | 3random values from the store length |
 | finalStore | <code>array</code> | array filled with "store" objects from the position equal than values from "randomArray" |
 
 <a name="hasTweetImage"></a>
@@ -177,3 +180,14 @@ convert4digitNumber - converts a number with 4 or more digits into a custom
 console.log( convert4digitNumber( 7500 ) ); // "7.5K"
 console.log( convert4digitNumber( 37500 ) ); // "37.5K"
 ```
+<a name="splitConcatString"></a>
+## splitConcatString(tweetText) ⇒ <code>string</code>
+splitConcatString - splits and concats string contains "@" or "https://"
+
+**Kind**: global function  
+**Returns**: <code>string</code> - modified string if contains "@", otherwise the same string  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| tweetText | <code>string</code> | every text on tweet |
+
