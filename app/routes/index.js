@@ -9,7 +9,7 @@ let storage = require( '../config/storage' );
 setInterval( () => {
   console.log('calling API');
   require( '../config/twitter' )();
-}, 18000000);
+}, 1800000);
 
 
 router.get( '/', ( request, response ) => {
