@@ -42,11 +42,22 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
   // Loading infinite scroll
   function loadInfiniteScroll () {
-    let bodyElement = document.querySelector('body');
-    let bodyHeight = bodyElement.clientHeight;
-    let bodyScrollTop = bodyElement.scrollTop;
-    let windowHeight = window.innerHeight;
-    let checkHeight = ( bodyHeight - windowHeight ) === bodyScrollTop;
+    let bodyElement;
+    let checkHeight;
+
+    if ( navigator.userAgent.indexOf( 'AppleWebKit' ) !== -1 ) {
+      bodyElement = document.querySelector('body');
+      let bodyHeight = bodyElement.clientHeight;
+      let bodyScrollTop = bodyElement.scrollTop;
+      let windowHeight = window.innerHeight;
+      checkHeight = ( bodyHeight - windowHeight ) === bodyScrollTop;
+    } else {
+      bodyElement = document.documentElement;
+      // checkHeight = ( bodyHeight - windowHeight ) === bodyScrollTop;
+    }
+
+
+      // console.log(bodyHeight, windowHeight,bodyScrollTop, ( bodyHeight - windowHeight ));
 
     if ( checkHeight ) {
       doHttpRequest();
