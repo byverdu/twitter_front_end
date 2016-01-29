@@ -5,7 +5,8 @@
     "start": "babel-node server.js",
     "nodemon": "nodemon --exec babel-node server.js",
     "test": "mocha --compilers js:babel-register",
-    "browserify": "browserify app/public/js/main.js -o app/public/js/bundle.js -t [ babelify --presets [ es2015 ] ]"
+    "browserify": "browserify app/public/js/main.js -o app/public/js/bundle.js -t [ babelify --presets [ es2015 ] ]",
+    "watchify": "watchify app/public/js/main.js -o app/public/js/bundle.js -t [ babelify --presets [ es2015 ] ]"
   },
   "dependencies": {
     "babel": "^6.3.26",

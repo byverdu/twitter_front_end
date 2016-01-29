@@ -40,13 +40,40 @@ document.addEventListener( 'DOMContentLoaded', () => {
     oReq.send();
   }
 
+  // check for navigator userAgent
+
+  function whichUserAgent( navigatorObject ) {
+
+    let bodyElement;
+    let checkHeight;
+    let bodyScrollTop;
+    let bodyHeight;
+    let windowHeight;
+
+    if( navigatorObject.userAgent.indexOf( 'AppleWebKit') !== -1 ) {
+      windowHeight = window.innerHeight;
+      bodyElement = document.querySelector('body');
+      bodyScrollTop = bodyElement.scrollTop;
+      bodyHeight = bodyElement.clientHeight;
+
+      checkHeight = ( bodyHeight - windowHeight ) === bodyScrollTop;
+      console.log(bodyScrollTop, bodyHeight, windowHeight, 'chrome');
+    } else {
+      bodyElement = document.documentElement;
+      bodyScrollTop = bodyElement.scrollTop;
+      windowHeight = window.scrollMaxY;
+
+      checkHeight = ( windowHeight === bodyScrollTop );
+      console.log(bodyScrollTop, window.scrollMaxY, 'mozilla');
+    }
+
+    return checkHeight;
+  }
+
   // Loading infinite scroll
   function loadInfiniteScroll () {
-    let bodyElement = document.querySelector('body');
-    let bodyHeight = bodyElement.clientHeight;
-    let bodyScrollTop = bodyElement.scrollTop;
-    let windowHeight = window.innerHeight;
-    let checkHeight = ( bodyHeight - windowHeight ) === bodyScrollTop;
+
+    let checkHeight = whichUserAgent( navigator );
 
     if ( checkHeight ) {
       doHttpRequest();
