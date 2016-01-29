@@ -50,21 +50,19 @@ document.addEventListener( 'DOMContentLoaded', () => {
     let bodyHeight;
     let windowHeight;
 
-    if( navigatorObject.userAgent.indexOf( 'AppleWebKit') !== -1 ) {
+    if( navigatorObject.userAgent.indexOf( 'AppleWebKit' ) !== -1 ) {
       windowHeight = window.innerHeight;
       bodyElement = document.querySelector('body');
       bodyScrollTop = bodyElement.scrollTop;
       bodyHeight = bodyElement.clientHeight;
 
       checkHeight = ( bodyHeight - windowHeight ) <= bodyScrollTop;
-      console.log(bodyScrollTop, bodyHeight, windowHeight, 'chrome');
     } else {
       bodyElement = document.documentElement;
       bodyScrollTop = bodyElement.scrollTop;
       windowHeight = window.scrollMaxY;
 
       checkHeight = ( windowHeight <= bodyScrollTop );
-      console.log(bodyScrollTop, window.scrollMaxY, 'mozilla');
     }
 
     return checkHeight;
