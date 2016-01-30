@@ -4,7 +4,9 @@
   "scripts": {
     "start": "babel-node server.js",
     "nodemon": "nodemon --exec babel-node server.js",
-    "test": "mocha --compilers js:babel-register"
+    "test": "mocha --compilers js:babel-register",
+    "browserify": "browserify app/public/js/main.js -o app/public/js/bundle.js -t [ babelify --presets [ es2015 ] ]",
+    "watchify": "watchify app/public/js/main.js -o app/public/js/bundle.js -t [ babelify --presets [ es2015 ] ]"
   },
   "dependencies": {
     "babel": "^6.3.26",
@@ -20,6 +22,8 @@
     "twit": "^2.1.1"
   },
   "devDependencies": {
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
     "grunt": "^0.4.5",
     "grunt-contrib-sass": "^0.9.2",
     "grunt-contrib-watch": "^0.6.1",

@@ -40,24 +40,38 @@ document.addEventListener( 'DOMContentLoaded', () => {
     oReq.send();
   }
 
-  // Loading infinite scroll
-  function loadInfiniteScroll () {
+  // check for navigator userAgent
+
+  function whichUserAgent( navigatorObject ) {
+
     let bodyElement;
     let checkHeight;
+    let bodyScrollTop;
+    let bodyHeight;
+    let windowHeight;
 
-    if ( navigator.userAgent.indexOf( 'AppleWebKit' ) !== -1 ) {
+    if( navigatorObject.userAgent.indexOf( 'AppleWebKit' ) !== -1 ) {
+      windowHeight = window.innerHeight;
       bodyElement = document.querySelector('body');
-      let bodyHeight = bodyElement.clientHeight;
-      let bodyScrollTop = bodyElement.scrollTop;
-      let windowHeight = window.innerHeight;
-      checkHeight = ( bodyHeight - windowHeight ) === bodyScrollTop;
+      bodyScrollTop = bodyElement.scrollTop;
+      bodyHeight = bodyElement.clientHeight;
+
+      checkHeight = ( bodyHeight - windowHeight ) <= bodyScrollTop;
     } else {
       bodyElement = document.documentElement;
-      // checkHeight = ( bodyHeight - windowHeight ) === bodyScrollTop;
+      bodyScrollTop = bodyElement.scrollTop;
+      windowHeight = window.scrollMaxY;
+
+      checkHeight = ( windowHeight <= bodyScrollTop );
     }
 
+    return checkHeight;
+  }
 
-      // console.log(bodyHeight, windowHeight,bodyScrollTop, ( bodyHeight - windowHeight ));
+  // Loading infinite scroll
+  function loadInfiniteScroll () {
+
+    let checkHeight = whichUserAgent( navigator );
 
     if ( checkHeight ) {
       doHttpRequest();
@@ -137,7 +151,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
   // Prepend the new tweet
 
   function addTweetToFeeds( tweetContent ) {
-    let newText = `<div class="twitterFeeds__userProfile profileToDisplay-js hide"><div style="background-image: url(https://pbs.twimg.com/profile_banners//223114717/1398275254)" class="twitterFeeds__userProfile--banner"></div><div class="container"><img src="http://pbs.twimg.com/profile_images/565890908088836096/D1SvBrOz_normal.jpeg" alt="rauschma profile image" class="twitterFeeds__userProfile--imageProfile"><h3 class="twitterFeeds__userProfile--user"><a href="https://twitter.com/byverdu">Axel Rauschmayer <span>@rauschma</span></a></h3><p class="twitterFeeds__userProfile--description">Web programmer? There is a lot to learn... and I will learn a lot @ <span class="tweetMention">@DeloitteDIGI_UK</span></p><ul class="twitterFeeds__userProfile--list"><li class="twitterFeeds__userProfile--item"><a href="https://twitter.com/byverdu">TWEETS <span>570</span></a></li><li class="twitterFeeds__userProfile--item"><a href="https://twitter.com/byverdu/following">FOLLOWING <span>56</span></a></li><li class="twitterFeeds__userProfile--item"><a href="https://twitter.com/byverdu/followers">FOLLOWERS <span>38</span></a></li></ul></div></div><div class="twitterFeeds__content"><div class="twitterFeeds__content--imgProfile"> <img src="http://pbs.twimg.com/profile_images/565890908088836096/D1SvBrOz_normal.jpeg" alt="image for rauschma" class="displayProfile-js"></div><div class="twitterFeeds__content--float"><h3 class="twitterFeeds__content--userName displayProfile-js">Albert Byverdu <span>@byverdu</span></h3><p class="twitterFeeds__content--tweetText"> ${ tweetContent } </p></div></div><div class="twitterFeeds__content--image"><div class="twitterFeeds__social"><ul class="twitterFeeds__social--list"><li class="twitterFeeds__social--item icon-reply"></li><li class="twitterFeeds__social--item icon-retweet"></li><li class="twitterFeeds__social--item icon-star"></li><li class="twitterFeeds__social--item">...</li></ul></div></div>`;
+    let newText = `<div class="twitterFeeds__userProfile profileToDisplay-js hide"><div style="background-image: url(https://pbs.twimg.com/profile_banners/223114717/1398275254)" class="twitterFeeds__userProfile--banner"></div><div class="container"><img src="http://pbs.twimg.com/profile_images/565890908088836096/D1SvBrOz_normal.jpeg" alt="rauschma profile image" class="twitterFeeds__userProfile--imageProfile"><h3 class="twitterFeeds__userProfile--user"><a href="https://twitter.com/byverdu">Albert Byverdu <span>@byverdu</span></a></h3><p class="twitterFeeds__userProfile--description">Web programmer? There is a lot to learn... and I will learn a lot @ <span class="tweetMention">@DeloitteDIGI_UK</span></p><ul class="twitterFeeds__userProfile--list"><li class="twitterFeeds__userProfile--item"><a href="https://twitter.com/byverdu">TWEETS <span>570</span></a></li><li class="twitterFeeds__userProfile--item"><a href="https://twitter.com/byverdu/following">FOLLOWING <span>56</span></a></li><li class="twitterFeeds__userProfile--item"><a href="https://twitter.com/byverdu/followers">FOLLOWERS <span>38</span></a></li></ul></div></div><div class="twitterFeeds__content"><div class="twitterFeeds__content--imgProfile"> <img src="http://pbs.twimg.com/profile_images/565890908088836096/D1SvBrOz_normal.jpeg" alt="image for rauschma" class="displayProfile-js"></div><div class="twitterFeeds__content--float"><h3 class="twitterFeeds__content--userName displayProfile-js">Albert Byverdu <span>@byverdu</span></h3><p class="twitterFeeds__content--tweetText"> ${ tweetContent } </p></div></div><div class="twitterFeeds__content--image"><div class="twitterFeeds__social"><ul class="twitterFeeds__social--list"><li class="twitterFeeds__social--item icon-reply"></li><li class="twitterFeeds__social--item icon-retweet"></li><li class="twitterFeeds__social--item icon-star"></li><li class="twitterFeeds__social--item">...</li></ul></div></div>`;
 
     let twitterFeeds = document.querySelector('.twitterFeeds');
     let firstChild =  document.querySelectorAll('.twitterFeeds__tweet');
@@ -160,6 +174,12 @@ document.addEventListener( 'DOMContentLoaded', () => {
     } else {
       textAreaParent.querySelector('a[rel="modal:close"]').click();
     }
+
+    Array.from( document.querySelectorAll('.displayProfile-js') ).forEach( (outerEl) => {
+
+      outerEl.addEventListener( 'mouseover', displayProfile );
+      outerEl.addEventListener( 'mouseout', hideProfile );
+    });
   }
 
 

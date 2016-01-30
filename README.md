@@ -44,23 +44,17 @@ The project can be viewed visiting [Twitter.byverdu.es](http://twitter.byverdu.e
     |   |-- helper
     |   |   |-- helper.js
     |   |-- public
-    |   |   |-- _index.html
-    |   |   |-- mine.jpg
-    |   |   |-- real.jpg
     |   |   |-- css
     |   |   |   |-- fonts.css
-    |   |   |   |-- main.css
-    |   |   |   |-- modal.css
     |   |   |   |-- dist
     |   |   |   |   |-- main.css
     |   |   |   |   |-- main.css.map
     |   |   |   |-- fonts
-    |   |   |       |----
+    |   |   |   |
     |   |   |-- images
-    |   |   |   |-- defaultBackground.jpg
-    |   |   |   |-- favicon.ico
+    |   |   |   |
     |   |   |-- js
-    |   |       |-- location.js
+    |   |       |-- bundle.js
     |   |       |-- main.js
     |   |       |-- modal.js
     |   |-- routes
@@ -68,24 +62,15 @@ The project can be viewed visiting [Twitter.byverdu.es](http://twitter.byverdu.e
     |   |-- sass
     |   |   |-- main.scss
     |   |   |-- partials
-    |   |       |-- scaffold.scss
-    |   |       |-- tweet.scss
+    |   |   |
     |   |-- views
     |       |-- index.jade
     |       |-- secondFeed.jade
     |       |-- partials
-    |           |-- feedNews.jade
-    |           |-- footer.jade
-    |           |-- layout.jade
-    |           |-- nav.jade
-    |           |-- toFollow.jade
-    |           |-- trends.jade
-    |           |-- tweetUserProfile.jade
-    |           |-- userProfile.jade
+    |
     |-- docs
     |   |-- docs.md
     |-- test
         |-- mainSpec.js
         |-- mocha.opts
-        |-- sampleData.js
 ```
