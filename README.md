@@ -15,7 +15,7 @@ Reimplementation of Twitter.com feed page as close as possible to the real one.
 
 In addition is possible to toggle a modal window where a tweet can be written and published.
 
-The project can be viewed visiting [Twitter.byverdu.es](http://twitter.byverdu.es:9393/)
+The project can be viewed visiting [Twitter.byverdu.es](http://twitter.byverdu.es/)
 
 [Documentaion for global methods](https://github.com/byverdu/twitter_front_end/blob/master/docs/docs.md)
 
